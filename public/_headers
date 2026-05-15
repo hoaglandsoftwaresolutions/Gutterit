@@ -1,0 +1,19 @@
+# Long cache for Vite's hashed asset bundles — file names change on rebuild
+# so we can safely cache them forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Day-long cache for images. Override if you ever swap a hero image.
+/images/*
+  Cache-Control: public, max-age=86400
+
+# HTML should always be revalidated so deploys go live immediately.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Robots and sitemap need to be fresh.
+/robots.txt
+  Cache-Control: public, max-age=300
+
+/sitemap.xml
+  Cache-Control: public, max-age=300

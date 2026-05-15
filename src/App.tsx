@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
+import { useGlobalReveal } from "./lib/useGlobalReveal";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import CityService from "./pages/CityService";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -16,10 +18,16 @@ function ScrollToTop() {
   return null;
 }
 
+function RevealController() {
+  useGlobalReveal();
+  return null;
+}
+
 export default function App() {
   return (
     <>
       <ScrollToTop />
+      <RevealController />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -27,6 +35,7 @@ export default function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path=":slug" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

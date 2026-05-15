@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 import { JobberForm } from "./JobberForm";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 type Props = {
   variant?: "card" | "plain";
@@ -18,9 +19,11 @@ export function QuoteForm({ variant = "card", className }: Props) {
         <h3 className="font-display text-lg font-bold">Get a free quote</h3>
       </div>
       <p className="mb-5 text-sm text-muted">
-        Three quick fields. We'll get back to you within 1 business day.
+        We'll get back to you within 1 business day.
       </p>
-      <JobberForm />
+      <ErrorBoundary>
+        <JobberForm />
+      </ErrorBoundary>
       <p className="mt-4 text-center text-sm text-muted">
         Or call us directly:{" "}
         <a

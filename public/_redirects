@@ -1,1 +1,4 @@
-/*    /index.html   200
+# Cloudflare Pages serves static files filesystem-first, so prerendered
+# routes like /cleaning-in-chattanooga/index.html are served directly.
+# This SPA fallback only fires for paths with no matching static file.
+/*    /index.html    200

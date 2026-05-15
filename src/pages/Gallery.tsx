@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
-import { Seo } from "../components/seo/Seo";
+import { PageSeoTags } from "../components/seo/usePageSeo";
 import { JOBS } from "../data/jobs";
 import { JobCard } from "../components/gallery/JobCard";
 import {
   GalleryFilter,
   type FilterValue,
 } from "../components/gallery/GalleryFilter";
-import { QuoteForm } from "../components/ui/QuoteForm";
+import { CtaSection } from "../components/ui/CtaSection";
 
 export default function Gallery() {
   const [filter, setFilter] = useState<FilterValue>("all");
@@ -18,11 +18,7 @@ export default function Gallery() {
 
   return (
     <>
-      <Seo
-        title="Gallery | Gutter-It LLC"
-        description="Before-and-after gutter and pressure washing projects in Chattanooga. See our work."
-        canonical="https://gutter-itllc.com/gallery"
-      />
+      <PageSeoTags path="/gallery" />
 
       <section className="bg-navy">
         <div className="container py-16 md:py-20">
@@ -55,19 +51,11 @@ export default function Gallery() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="container py-16 md:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Want your home in here?</p>
-            <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
-              Get a free quote.
-            </h2>
-          </div>
-          <div className="mx-auto mt-10 max-w-xl">
-            <QuoteForm />
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        eyebrow="Want your home in here?"
+        heading="Get a free quote."
+        bg="white"
+      />
     </>
   );
 }

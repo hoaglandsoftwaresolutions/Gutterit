@@ -1,8 +1,8 @@
 import { FileText, MessageSquareText, Phone, Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Seo } from "../components/seo/Seo";
+import { PageSeoTags } from "../components/seo/usePageSeo";
 import { TrustBar } from "../components/layout/TrustBar";
-import { QuoteForm } from "../components/ui/QuoteForm";
+import { CtaSection } from "../components/ui/CtaSection";
 
 const PILLARS: { icon: LucideIcon; title: string; body: string }[] = [
   {
@@ -30,11 +30,7 @@ const PILLARS: { icon: LucideIcon; title: string; body: string }[] = [
 export default function About() {
   return (
     <>
-      <Seo
-        title="About | Gutter-It LLC"
-        description="Family-owned gutter and pressure washing company in Chattanooga, TN. Meet Jakob and learn how we run every job."
-        canonical="https://gutter-itllc.com/about"
-      />
+      <PageSeoTags path="/about" />
 
       <section className="bg-navy">
         <div className="container py-16 md:py-20">
@@ -121,22 +117,11 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-cream">
-        <div className="container py-16 md:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Ready to talk gutters?</p>
-            <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
-              Get a free quote.
-            </h2>
-            <p className="mt-3 text-base text-navy/70">
-              Three fields. We'll get back to you within 1 business day.
-            </p>
-          </div>
-          <div className="mx-auto mt-10 max-w-xl">
-            <QuoteForm />
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        eyebrow="Ready to talk gutters?"
+        heading="Get a free quote."
+        body="Three fields. We'll get back to you within 1 business day."
+      />
     </>
   );
 }

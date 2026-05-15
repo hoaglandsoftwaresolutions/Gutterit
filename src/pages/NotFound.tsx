@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/seo/Seo";
+import { SITE_ORIGIN } from "../data/seo";
 
 export default function NotFound() {
   return (
@@ -7,7 +8,8 @@ export default function NotFound() {
       <Seo
         title="Page Not Found | Gutter-It LLC"
         description="The page you're looking for doesn't exist."
-        canonical="https://gutter-itllc.com/"
+        canonical={`${SITE_ORIGIN}/`}
+        noindex
       />
       <section className="bg-cream">
         <div className="container py-24 text-center">

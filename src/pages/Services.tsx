@@ -1,10 +1,11 @@
 import { Check, Droplets, Hammer, Sparkles, Wrench } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Seo } from "../components/seo/Seo";
+import { PageSeoTags } from "../components/seo/usePageSeo";
 import { TrustBar } from "../components/layout/TrustBar";
 import { SERVICES } from "../data/services";
 import { PriceEstimator } from "../components/pricing/PriceEstimator";
-import { QuoteForm } from "../components/ui/QuoteForm";
+import { CtaSection } from "../components/ui/CtaSection";
+import { ServiceAreasGrid } from "../components/seo/ServiceAreasGrid";
 
 const ICONS: Record<string, LucideIcon> = {
   Droplets,
@@ -16,11 +17,7 @@ const ICONS: Record<string, LucideIcon> = {
 export default function Services() {
   return (
     <>
-      <Seo
-        title="Services & Pricing | Gutter-It LLC"
-        description="Gutter cleaning from $100, repair from $50, seamless installation, and pressure washing in Chattanooga, TN. Free quotes."
-        canonical="https://gutter-itllc.com/services"
-      />
+      <PageSeoTags path="/services" />
       <section className="bg-navy">
         <div className="container py-16 md:py-20">
           <p className="eyebrow text-amber-200">Services &amp; Pricing</p>
@@ -85,19 +82,9 @@ export default function Services() {
 
       <PriceEstimator />
 
-      <section className="bg-cream">
-        <div className="container py-16 md:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Ready when you are</p>
-            <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
-              Get your free quote.
-            </h2>
-          </div>
-          <div className="mx-auto mt-10 max-w-xl">
-            <QuoteForm />
-          </div>
-        </div>
-      </section>
+      <ServiceAreasGrid />
+
+      <CtaSection eyebrow="Ready when you are" heading="Get your free quote." />
     </>
   );
 }

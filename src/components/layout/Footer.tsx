@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { BUSINESS } from "../../data/business";
+import { AREAS } from "../../data/areas";
+import { cityServicePath } from "../../data/seo";
 
 export function Footer() {
   return (
@@ -94,19 +96,27 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="md:hidden lg:block">
+        <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-cream">
-            Ready when you are
+            Gutter cleaning by city
           </h4>
-          <p className="mt-4 text-sm text-cream/75">
-            Free quote. Same-day callback. Licensed and insured in Tennessee.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-white/40 px-5 py-2 text-sm font-semibold text-white hover:border-white hover:bg-white/10"
-          >
-            Get a Quote
-          </Link>
+          <ul className="mt-4 space-y-2 text-sm">
+            {AREAS.slice(0, 6).map((city) => (
+              <li key={city}>
+                <Link
+                  to={cityServicePath("cleaning", city)}
+                  className="hover:text-white"
+                >
+                  Gutter cleaning in {city}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link to="/services" className="font-semibold hover:text-white">
+                All service areas →
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="border-t border-white/10">

@@ -1,78 +1,98 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Replace JOBBER_FORM_URL with the actual embedded work request form URL
-// from your Jobber Client Hub when ready. Until then, a placeholder is shown.
-const JOBBER_FORM_URL = ""; // e.g. "https://clienthub.getjobber.com/client_hubs/.../public/work_request/embedded_work_request_form"
-const JOBBER_RESIZER_SRC =
-  "https://d3ey4dbjkrb0bt.cloudfront.net/0.1.x/static/js/iframeResizer.min.js";
+const JOBBER_CLIENTHUB_ID = "3dd5be29-ba00-4fd2-af50-a387adf10a67-2436215";
+const JOBBER_FORM_URL =
+  "https://clienthub.getjobber.com/client_hubs/3dd5be29-ba00-4fd2-af50-a387adf10a67/public/work_request/embedded_work_request_form?form_id=2436215";
+const JOBBER_STYLES =
+  "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css";
+const JOBBER_SCRIPT_SRC =
+  "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
+
+let scriptLoaded = false;
+let activeHost: HTMLElement | null = null;
+
+function ensureStylesheet() {
+  if (typeof document === "undefined") return;
+  if (document.querySelector(`link[href="${JOBBER_STYLES}"]`)) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = JOBBER_STYLES;
+  link.media = "screen";
+  document.head.appendChild(link);
+}
+
+function loadScript() {
+  if (scriptLoaded) return;
+  scriptLoaded = true;
+  const script = document.createElement("script");
+  script.src = JOBBER_SCRIPT_SRC;
+  script.setAttribute("clienthub_id", JOBBER_CLIENTHUB_ID);
+  script.setAttribute("form_url", JOBBER_FORM_URL);
+  document.body.appendChild(script);
+}
 
 type Props = {
   className?: string;
 };
 
 export function JobberForm({ className }: Props) {
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const hostRef = useRef<HTMLDivElement | null>(null);
+  const [taken, setTaken] = useState(false);
 
   useEffect(() => {
-    if (!JOBBER_FORM_URL) return;
+    try {
+      ensureStylesheet();
+    } catch (err) {
+      console.error("[JobberForm] stylesheet error", err);
+    }
 
-    const existing = document.querySelector(
-      `script[src="${JOBBER_RESIZER_SRC}"]`,
-    );
-    if (existing) {
-      tryResize();
+    const host = hostRef.current;
+    if (!host) return;
+
+    if (activeHost && activeHost !== host && document.contains(activeHost)) {
+      setTaken(true);
       return;
     }
 
-    const script = document.createElement("script");
-    script.src = JOBBER_RESIZER_SRC;
-    script.async = true;
-    script.onload = tryResize;
-    document.body.appendChild(script);
+    host.id = JOBBER_CLIENTHUB_ID;
+    activeHost = host;
 
-    function tryResize() {
-      const w = window as unknown as {
-        iFrameResize?: (opts: object, target: HTMLIFrameElement) => void;
-      };
-      if (iframeRef.current && typeof w.iFrameResize === "function") {
-        w.iFrameResize(
-          { log: false, checkOrigin: false },
-          iframeRef.current,
-        );
-      }
+    try {
+      loadScript();
+    } catch (err) {
+      console.error("[JobberForm] script load error", err);
     }
+
+    return () => {
+      if (activeHost === host) {
+        activeHost = null;
+      }
+      host.removeAttribute("id");
+    };
   }, []);
 
-  if (!JOBBER_FORM_URL) {
+  if (taken) {
     return (
       <div
         className={
-          "rounded-xl border border-navy/15 bg-white p-6 text-center " +
+          "rounded-xl border border-navy/15 bg-white p-6 text-sm text-navy " +
           (className ?? "")
         }
       >
-        <p className="text-sm font-semibold text-navy">
-          Jobber request form goes here.
-        </p>
-        <p className="mt-2 text-sm text-muted">
-          Paste your Jobber embedded work-request URL into{" "}
-          <code className="rounded bg-navy/5 px-1 py-0.5 text-navy">
-            JOBBER_FORM_URL
-          </code>{" "}
-          in <code>src/components/ui/JobberForm.tsx</code> to enable the live
-          form.
+        <p className="font-semibold">A quote form is already open elsewhere on the page.</p>
+        <p className="mt-2 text-muted">
+          Scroll up to fill it out, or call{" "}
+          <a
+            href="tel:+14234753158"
+            className="font-semibold text-navy underline"
+          >
+            (423) 475-3158
+          </a>
+          .
         </p>
       </div>
     );
   }
 
-  return (
-    <iframe
-      ref={iframeRef}
-      src={JOBBER_FORM_URL}
-      title="Request a Quote"
-      className={"w-full border-0 " + (className ?? "")}
-      style={{ minHeight: 600 }}
-    />
-  );
+  return <div ref={hostRef} className={className} />;
 }
