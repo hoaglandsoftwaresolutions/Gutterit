@@ -20,7 +20,7 @@ export function QuoteForm({ variant = "card", className }: Props) {
       </div>
       <p className="mb-5 text-sm text-muted">
         We'll get back to you within 1 business day.
-      </p>
+      </p> 
       <ErrorBoundary>
         <JobberForm />
       </ErrorBoundary>
