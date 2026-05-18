@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { BUSINESS } from "../../data/business";
-import { AREAS } from "../../data/areas";
-import { cityServicePath } from "../../data/seo";
 
 export function Footer() {
   return (
@@ -22,16 +20,16 @@ export function Footer() {
             <a
               href="#"
               aria-label="Facebook"
-              className="rounded-full border border-white/10 p-2 hover:border-white/20 hover:bg-white/10"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/10"
             >
-              <Facebook className="h-4 w-4" />
+              <Facebook className="h-5 w-5" />
             </a>
             <a
               href="#"
               aria-label="Instagram"
-              className="rounded-full border border-white/10 p-2 hover:border-white/20 hover:bg-white/10"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 hover:border-white/20 hover:bg-white/10"
             >
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -98,22 +96,32 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-cream">
-            Gutter cleaning by city
+            Site
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
-            {AREAS.slice(0, 6).map((city) => (
-              <li key={city}>
-                <Link
-                  to={cityServicePath("cleaning", city)}
-                  className="hover:text-white"
-                >
-                  Gutter cleaning in {city}
-                </Link>
-              </li>
-            ))}
             <li>
-              <Link to="/services" className="font-semibold hover:text-white">
-                All service areas →
+              <Link to="/" className="hover:text-white">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-white">
+                Services & Pricing
+              </Link>
+            </li>
+            <li>
+              <Link to="/gallery" className="hover:text-white">
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-white">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="font-semibold hover:text-white">
+                Get a Quote →
               </Link>
             </li>
           </ul>

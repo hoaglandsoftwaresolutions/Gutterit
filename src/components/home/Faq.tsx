@@ -14,7 +14,7 @@ export function Faq({
   return (
     <section className="bg-cream">
       <div className="container py-16 md:py-20">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">FAQ</p>
           <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
             {heading}
@@ -25,7 +25,7 @@ export function Faq({
         <Accordion.Root
           type="single"
           collapsible
-          className="mt-10 max-w-3xl divide-y divide-navy/10 border-y border-navy/10"
+          className="mx-auto mt-10 max-w-3xl divide-y divide-navy/10 border-y border-navy/10"
         >
           {FAQ.map((item, i) => (
             <Accordion.Item key={i} value={`q-${i}`}>

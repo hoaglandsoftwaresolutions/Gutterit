@@ -1,4 +1,4 @@
-import { SERVICES, type Service, type ServiceCategory } from "./services";
+import { SERVICES, type Service } from "./services";
 import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ } from "./faq";
@@ -13,43 +13,8 @@ export type PageSeo = {
   jsonLd?: object[];
 };
 
-type ServiceSlug = ServiceCategory;
-type CitySlug = string;
-
-const cityLookup: Record<CitySlug, string> = AREAS.reduce<Record<string, string>>(
-  (acc, city) => {
-    acc[citySlug(city)] = city;
-    return acc;
-  },
-  {},
-);
-
-function slug(s: string) {
-  return s
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-export function citySlug(city: string) {
-  return slug(city);
-}
-
 export function serviceSlug(service: Service) {
   return service.slug;
-}
-
-export function cityServicePath(service: ServiceSlug, city: string) {
-  return `/${service}-in-${citySlug(city)}/`;
-}
-
-export function cityFromSlug(s: string): string | null {
-  return cityLookup[s] ?? null;
-}
-
-export function serviceFromSlug(s: string): Service | null {
-  return SERVICES.find((svc) => svc.slug === (s as ServiceSlug)) ?? null;
 }
 
 function fullUrl(path: string) {
@@ -133,45 +98,8 @@ export function getStaticRoutes(): PageSeo[] {
   return [home, services, gallery, about, contact];
 }
 
-export function getCityServiceRoutes(): PageSeo[] {
-  const pages: PageSeo[] = [];
-  for (const service of SERVICES) {
-    for (const city of AREAS) {
-      pages.push(cityServicePage(service, city));
-    }
-  }
-  return pages;
-}
-
 export function getAllRoutes(): PageSeo[] {
-  return [...getStaticRoutes(), ...getCityServiceRoutes()];
-}
-
-function cityServicePage(service: Service, city: string): PageSeo {
-  const path = cityServicePath(service.slug, city);
-  const title = `${service.title} in ${city}, TN | Gutter-It LLC`;
-  const description =
-    service.slug === "cleaning"
-      ? `Gutter cleaning in ${city}, TN from $100. Hand-clear leaves and debris, flush every downspout, haul away. Same-day callback, free quotes. Call (423) 475-3158.`
-      : service.slug === "repair"
-        ? `Gutter repair in ${city}, TN from $50. Sagging sections, leaky seams, broken downspouts — fixed without selling you a full replacement. Free quotes.`
-        : service.slug === "installation"
-          ? `Seamless gutter installation in ${city}, TN. Aluminum gutters formed on-site to fit your roof line. 5-year workmanship warranty. Free written quote.`
-          : `Pressure washing in ${city}, TN. Driveways, sidewalks, siding, decks, and gutter exteriors cleaned without damage. Free quote.`;
-
-  return {
-    path,
-    title,
-    description,
-    jsonLd: [
-      breadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: "Services", path: "/services" },
-        { name: `${service.title} in ${city}`, path },
-      ]),
-      cityServiceSchema(service, city),
-    ],
-  };
+  return getStaticRoutes();
 }
 
 // ---------- Structured-data builders ----------
@@ -286,23 +214,3 @@ function serviceSchema(s: Service) {
   };
 }
 
-function cityServiceSchema(s: Service, city: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: s.title,
-    name: `${s.title} in ${city}, TN`,
-    provider: { "@id": `${SITE_ORIGIN}/#business` },
-    areaServed: { "@type": "City", name: `${city}, TN` },
-    description: s.blurb,
-    ...(s.slug === "cleaning" || s.slug === "repair"
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: s.slug === "cleaning" ? "100" : "50",
-            priceCurrency: "USD",
-          },
-        }
-      : {}),
-  };
-}

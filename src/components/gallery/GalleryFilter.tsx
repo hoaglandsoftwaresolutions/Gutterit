@@ -28,7 +28,7 @@ export function GalleryFilter({ value, onChange }: Props) {
           type="button"
           onClick={() => onChange(f.value)}
           className={cn(
-            "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+            "inline-flex min-h-[40px] items-center rounded-full px-4 py-2 text-sm font-medium transition-colors",
             value === f.value
               ? "bg-navy text-cream"
               : "border border-navy/15 bg-white text-navy hover:border-navy/40",

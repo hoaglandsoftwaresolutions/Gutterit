@@ -1,6 +1,6 @@
 // Build-time mirror of src/data/seo.ts — kept in plain JS so Node scripts can
-// import it without a TS toolchain. If you add a new city, service, or static
-// page, update both this file and src/data/seo.ts.
+// import it without a TS toolchain. If you add a new service or static page,
+// update both this file and src/data/seo.ts.
 
 export const SITE_ORIGIN = "https://gutter-itllc.com";
 
@@ -82,17 +82,6 @@ export const FAQ = [
     a: "Same-day callback when you reach out, and most on-site quotes happen within 2–4 business days. Storm damage and active leaks jump the line — call us, don't fill out the form, if it's actively making your house wet.",
   },
 ];
-
-function citySlug(city) {
-  return city
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-export function cityServicePath(serviceSlug, city) {
-  return `/${serviceSlug}-in-${citySlug(city)}/`;
-}
 
 function fullUrl(path) {
   if (path === "/") return `${SITE_ORIGIN}/`;
@@ -200,37 +189,6 @@ function serviceSchema(s) {
   };
 }
 
-function cityServiceSchema(s, city) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: s.title,
-    name: `${s.title} in ${city}, TN`,
-    provider: { "@id": `${SITE_ORIGIN}/#business` },
-    areaServed: { "@type": "City", name: `${city}, TN` },
-    description: s.blurb,
-    ...(s.price
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: s.price.value,
-            priceCurrency: s.price.currency,
-          },
-        }
-      : {}),
-  };
-}
-
-function cityServiceDescription(s, city) {
-  if (s.slug === "cleaning")
-    return `Gutter cleaning in ${city}, TN from $100. Hand-clear leaves and debris, flush every downspout, haul away. Same-day callback, free quotes. Call (423) 475-3158.`;
-  if (s.slug === "repair")
-    return `Gutter repair in ${city}, TN from $50. Sagging sections, leaky seams, broken downspouts — fixed without selling you a full replacement. Free quotes.`;
-  if (s.slug === "installation")
-    return `Seamless gutter installation in ${city}, TN. Aluminum gutters formed on-site to fit your roof line. 5-year workmanship warranty. Free written quote.`;
-  return `Pressure washing in ${city}, TN. Driveways, sidewalks, siding, decks, and gutter exteriors cleaned without damage. Free quote.`;
-}
-
 export function getAllRoutes() {
   const home = {
     path: "/",
@@ -304,27 +262,5 @@ export function getAllRoutes() {
     ],
   };
 
-  const cityServices = [];
-  for (const s of SERVICES) {
-    for (const city of AREAS) {
-      const path = cityServicePath(s.slug, city);
-      cityServices.push({
-        path,
-        title: `${s.title} in ${city}, TN | Gutter-It LLC`,
-        description: cityServiceDescription(s, city),
-        priority: 0.7,
-        changefreq: "monthly",
-        jsonLd: [
-          breadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: `${s.title} in ${city}`, path },
-          ]),
-          cityServiceSchema(s, city),
-        ],
-      });
-    }
-  }
-
-  return [home, services, gallery, about, contact, ...cityServices];
+  return [home, services, gallery, about, contact];
 }

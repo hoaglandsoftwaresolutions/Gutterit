@@ -5,7 +5,6 @@ import { TrustBar } from "../components/layout/TrustBar";
 import { SERVICES } from "../data/services";
 import { PriceEstimator } from "../components/pricing/PriceEstimator";
 import { CtaSection } from "../components/ui/CtaSection";
-import { ServiceAreasGrid } from "../components/seo/ServiceAreasGrid";
 
 const ICONS: Record<string, LucideIcon> = {
   Droplets,
@@ -81,8 +80,6 @@ export default function Services() {
       </section>
 
       <PriceEstimator />
-
-      <ServiceAreasGrid />
 
       <CtaSection eyebrow="Ready when you are" heading="Get your free quote." />
     </>

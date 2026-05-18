@@ -20,11 +20,6 @@ export function Header() {
     setOpen(false);
   }, [location.pathname]);
 
-  useEffect(() => {
-    document.body.classList.toggle("menu-open", open);
-    return () => document.body.classList.remove("menu-open");
-  }, [open]);
-
   return (
     <header className="sticky top-0 z-40 border-b border-navy/5 bg-cream/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between md:h-20">
@@ -36,6 +31,8 @@ export function Header() {
           <img
             src="/gutterit.logo.png"
             alt=""
+            width={36}
+            height={36}
             className="h-8 w-8 md:h-9 md:w-9"
           />
           <span className="font-display text-xl font-bold tracking-wider md:text-2xl">

@@ -58,14 +58,3 @@
   }
 }
 
-@media (max-width: 767px) {
-  body {
-    padding-bottom: 72px;
-  }
-  body.menu-open {
-    padding-bottom: 0;
-  }
-  body.menu-open .sticky-mobile-cta {
-    display: none;
-  }
-}

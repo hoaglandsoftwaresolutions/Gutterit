@@ -8,6 +8,8 @@ export function Hero() {
       <img
         src="/images/hero/hero-main.jpg"
         alt=""
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover opacity-40"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-800/90 via-navy-700/65 to-amber-900/15" />

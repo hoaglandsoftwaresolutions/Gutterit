@@ -31,7 +31,7 @@ export function PriceEstimator() {
   return (
     <section className="bg-white">
       <div className="container py-16 md:py-20">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Quick estimate</p>
           <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
             Get a ballpark in seconds.
@@ -42,7 +42,7 @@ export function PriceEstimator() {
           </p>
         </div>
 
-        <div className="mt-10 max-w-3xl rounded-xl border border-navy/10 bg-white p-6 shadow-card md:p-8">
+        <div className="mx-auto mt-10 max-w-3xl rounded-xl border border-navy/10 bg-white p-6 shadow-card md:p-8">
           <div className="flex items-center gap-2 text-navy">
             <Calculator className="h-5 w-5 text-amber" />
             <h3 className="font-display text-lg font-bold">

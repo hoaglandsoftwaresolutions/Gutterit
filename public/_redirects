@@ -1,4 +1,12 @@
+# Legacy per-city service URLs are gone — funnel any inbound SEO traffic
+# (or stale Google index entries) to the main Services page. These must
+# come BEFORE the SPA fallback below.
+/cleaning-in-*           /services    301
+/repair-in-*             /services    301
+/installation-in-*       /services    301
+/pressure-washing-in-*   /services    301
+
 # Cloudflare Pages serves static files filesystem-first, so prerendered
-# routes like /cleaning-in-chattanooga/index.html are served directly.
-# This SPA fallback only fires for paths with no matching static file.
+# routes like /services/index.html are served directly. This SPA fallback
+# only fires for paths with no matching static file.
 /*    /index.html    200
