@@ -142,6 +142,17 @@ export function Footer() {
             </a>
           </div>
         </div>
+        <div className="container pb-5 text-center text-xs text-cream/60">
+          Created by{" "}
+          <a
+            href="https://hoaglandsoftwaresolutions.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white"
+          >
+            Hoagland Software Solutions LLC
+          </a>
+        </div>
       </div>
     </footer>
   );
