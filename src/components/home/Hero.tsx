@@ -19,16 +19,10 @@ export function Hero() {
           Chattanooga, TN · Hamilton County
         </p>
         <h1 className="mt-3 font-display text-3xl font-bold leading-tight text-white md:text-4xl drop-shadow-[0_2px_8px_rgba(15,41,66,0.35)] animate-fade-in">
-          Enhancing your home's value,{" "}
-          <span className="italic text-amber-200">
-            one gutter at a time.
-          </span>
+          Chattanooga Gutter Installation & Cleaning — Done Right the First Time
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-cream/85 animate-fade-in-up">
-          Chattanooga's local choice for seamless gutter cleaning, installation,
-          repair, and pressure washing — cleaning from $100, repairs from $50,
-          full installs, and we've got the rest of your home's exterior covered
-          too.
+          Locally owned and serving Chattanooga, Hixson, Signal Mountain, and East Ridge. Seamless gutter installation, repairs, cleaning, and guard systems built to handle Tennessee storms and the leaf load that comes with them. Free on-site estimates, straight pricing, and crews that show up when they say they will. Call or text for a quote — most jobs scheduled within the week.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <ButtonLink to="/contact">
