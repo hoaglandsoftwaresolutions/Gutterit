@@ -22,7 +22,7 @@ const PILLARS: { icon: LucideIcon; title: string; body: string }[] = [
   },
   {
     icon: FileText,
-    title: "Written quote, fixed price",
+    title: "Honest quote, fixed price",
     body: "Whatever I quote on-site is what you pay. No surprise add-ons after we start. If we find something we didn't expect, I stop and talk to you before the meter runs.",
   },
 ];

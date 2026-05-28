@@ -20,7 +20,11 @@ export type ServiceDetail = {
     image: string;
     imageAlt: string;
   };
-  intro: { heading: string; body: DetailParagraph[] };
+  intro: {
+    heading: string;
+    body: DetailParagraph[];
+    image?: { src: string; alt: string; caption?: string };
+  };
   signs: { heading: string; items: DetailItem[] };
   whatsIncluded: { heading: string; items: DetailItem[] };
   alsoIncludes?: { heading: string; intro?: string; items: AlsoIncludedItem[] };
@@ -454,9 +458,15 @@ const REPAIR: ServiceDetail = {
   },
   intro: {
     heading: "Why a small gutter problem turns into a big one.",
+    image: {
+      src: "/images/jobs/repair/damaged-gutter-fascia-v3.jpg",
+      alt: "Damaged aluminum gutter with split fascia board and cracked soffit on a Chattanooga home",
+      caption:
+        "Real home in Chattanooga: gutter still hanging, but the fascia is splitting and the soffit corner is cracking open from years of overflow.",
+    },
     body: [
       "There's a lot of money in selling whole gutter replacements that didn't need to happen. We do installs — but if your problem is two bad seams and a sagging corner, that's a $150 fix, not a $1,500 one.",
-      "The catch is that gutter damage almost never stays a gutter problem. Once a seam starts leaking or a section pulls away from the house, water doesn't just disappear — it runs straight down the back of the gutter, soaks the fascia board behind it, and from there finds its way into the soffit, the wall cavity, and eventually the brick or siding below. The photo above is a real Chattanooga home: the gutter is still hanging, but the fascia is splitting, the soffit corner is cracking open, and you can see the wood is already wet underneath. A repair at this stage is still in the hundreds of dollars. Wait another season and you're rebuilding fascia, soffit, and possibly a section of roof decking — and that's a five-figure job.",
+      "The catch is that gutter damage almost never stays a gutter problem. Once a seam starts leaking or a section pulls away from the house, water doesn't just disappear — it runs straight down the back of the gutter, soaks the fascia board behind it, and from there finds its way into the soffit, the wall cavity, and eventually the brick or siding below. The photo to the left is a real Chattanooga home: the gutter is still hanging, but the fascia is splitting, the soffit corner is cracking open, and you can see the wood is already wet underneath. A repair at this stage is still in the hundreds of dollars. Wait another season and you're rebuilding fascia, soffit, and possibly a section of roof decking — and that's a five-figure job.",
       "Most calls we get for 'I need new gutters' turn out to be repair jobs caught early enough that the gutter itself is fine. We'll come out, walk the house, and tell you honestly what the gutters need — and just as importantly, what the surrounding wood needs before any of it gets worse. If it's a repair, we quote a repair. If the system is shot, we say that too.",
     ],
   },
@@ -559,12 +569,6 @@ const REPAIR: ServiceDetail = {
     ],
   },
   photos: [
-    {
-      src: "/images/jobs/repair/damaged-gutter-fascia.jpg",
-      alt: "Damaged aluminum gutter with split fascia board and cracked soffit on a Chattanooga home",
-      caption:
-        "This is what 'just a gutter problem' looks like after a couple seasons of overflow — fascia splitting, soffit corner cracked open, water already in the wood. Caught now, it's still a repair. Wait a year and it's a rebuild.",
-    },
     {
       src: "/images/jobs/repair/undergutter.jpg",
       alt: "Repair work under a Chattanooga gutter line",

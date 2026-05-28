@@ -17,7 +17,6 @@ export default function Home() {
       <TrustBar />
       <WhyChooseUs />
       <Testimonials />
-      <ServingBar />
       <ServicesGrid />
       <WhoWeAre />
       <Faq />
@@ -26,6 +25,7 @@ export default function Home() {
         heading="Get your free quote."
         body="Name, phone, and what you need. We'll call you back the same day to talk it through."
       />
+      <ServingBar />
     </>
   );
 }

@@ -65,12 +65,28 @@ export function ServiceDetailPage({ detail, path }: Props) {
       {/* Intro */}
       <section className="bg-white">
         <div className="container py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+          <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:items-center md:gap-16">
             <div>
               <p className="eyebrow">Overview</p>
               <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
                 {detail.intro.heading}
               </h2>
+              {detail.intro.image && (
+                <figure className="mt-6 overflow-hidden rounded-xl border border-navy/10 bg-cream shadow-card">
+                  <img
+                    src={detail.intro.image.src}
+                    alt={detail.intro.image.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full object-cover"
+                  />
+                  {detail.intro.image.caption && (
+                    <figcaption className="px-5 py-4 text-sm leading-relaxed text-navy/70">
+                      {detail.intro.image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
             </div>
             <div className="space-y-5 text-base leading-relaxed text-navy/80">
               {detail.intro.body.map((para, i) => (

@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, ShieldCheck, Users, Wrench } from "lucide-react";
+import { ShieldCheck, Users, Wrench } from "lucide-react";
 import { BUSINESS } from "../../data/business";
-import { AREAS } from "../../data/areas";
 
 const HIGHLIGHTS = [
   {
@@ -24,7 +22,7 @@ const HIGHLIGHTS = [
 export function WhoWeAre() {
   return (
     <section className="bg-white">
-      <div className="container py-16 md:py-24">
+      <div className="container pt-16 pb-10 md:pt-24 md:pb-12">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
           <div>
             <p className="eyebrow">Who we are</p>
@@ -48,7 +46,7 @@ export function WhoWeAre() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {HIGHLIGHTS.map((h) => (
             <div
               key={h.title}
@@ -67,36 +65,6 @@ export function WhoWeAre() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-navy/10 bg-cream/60 p-6 md:p-8">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-1 h-5 w-5 shrink-0 text-amber" />
-              <div>
-                <p className="font-display text-lg font-bold text-navy">
-                  Serving Chattanooga and all of Hamilton County, TN.
-                </p>
-                <p className="mt-1 text-sm text-navy/70">
-                  Free on-site estimates across our full service area.
-                </p>
-              </div>
-            </div>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 self-start rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-cream hover:bg-amber hover:text-navy md:self-auto"
-            >
-              Get a Free Quote
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <ul className="mt-6 grid grid-cols-2 gap-2 text-sm text-navy/80 sm:grid-cols-3 md:grid-cols-5">
-            {AREAS.map((area) => (
-              <li key={area} className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-amber" />
-                {area}, TN
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );
