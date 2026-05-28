@@ -27,13 +27,13 @@ function fullUrl(path) {
   return `${SITE_ORIGIN}${path.endsWith("/") ? path : path + "/"}`;
 }
 
-const OG_IMAGE = `${SITE_ORIGIN}/images/hero/hero-main.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/images/hero/hero-main.jpg`;
 
 function buildHead(route) {
   const canonical = fullUrl(route.path);
   const title = escapeHtml(route.title);
   const description = escapeHtml(route.description);
-  const ogImage = escapeHtml(OG_IMAGE);
+  const ogImage = escapeHtml(route.ogImage ?? DEFAULT_OG_IMAGE);
 
   const jsonLdBlocks = (route.jsonLd ?? [])
     .map(

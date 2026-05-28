@@ -40,22 +40,36 @@ export function Footer() {
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link to="/services" className="hover:text-white">
-                Gutter Cleaning
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-white">
-                Gutter Repair
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-white">
+              <Link
+                to="/services/installation"
+                className="hover:text-white"
+              >
                 Gutter Installation
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-white">
+              <Link to="/services/cleaning" className="hover:text-white">
+                Gutter Cleaning
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/repair" className="hover:text-white">
+                Gutter Repair
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/gutter-guards"
+                className="hover:text-white"
+              >
+                Gutter Guards
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/pressure-washing"
+                className="hover:text-white"
+              >
                 Pressure Washing
               </Link>
             </li>
@@ -107,11 +121,6 @@ export function Footer() {
             <li>
               <Link to="/services" className="hover:text-white">
                 Services & Pricing
-              </Link>
-            </li>
-            <li>
-              <Link to="/gallery" className="hover:text-white">
-                Gallery
               </Link>
             </li>
             <li>

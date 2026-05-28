@@ -8,9 +8,8 @@ type Props = {
 };
 
 // QuoteForm is a thin wrapper around the Jobber embedded form. The card
-// variant matches the styled containers seen on the Home/About/Gallery
-// pages; the plain variant is used on /contact where the form sits in its
-// own column.
+// variant matches the styled containers seen on the Home/About pages; the
+// plain variant is used on /contact where the form sits in its own column.
 export function QuoteForm({ variant = "card", className }: Props) {
   const inner = (
     <>

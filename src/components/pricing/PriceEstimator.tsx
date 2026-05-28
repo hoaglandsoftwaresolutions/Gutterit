@@ -134,7 +134,7 @@ export function PriceEstimator() {
             <p className="mt-3 text-xs text-cream/75">
               This is a rough estimate, not a quote. Final pricing depends on
               your specific roof line, accessibility, and condition. We provide
-              written quotes on-site at no charge.
+              honest quotes on-site at no charge.
             </p>
           </div>
         </div>

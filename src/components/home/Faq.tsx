@@ -1,15 +1,17 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
-import { FAQ } from "../../data/faq";
+import { FAQ, type FaqItem } from "../../data/faq";
 
 type Props = {
   heading?: string;
   intro?: string;
+  items?: FaqItem[];
 };
 
 export function Faq({
   heading = "Questions we get a lot.",
   intro = "If you don't see your question here, just call. We'd rather talk it through than have you guess.",
+  items = FAQ,
 }: Props) {
   return (
     <section className="bg-cream">
@@ -27,7 +29,7 @@ export function Faq({
           collapsible
           className="mx-auto mt-10 max-w-3xl divide-y divide-navy/10 border-y border-navy/10"
         >
-          {FAQ.map((item, i) => (
+          {items.map((item, i) => (
             <Accordion.Item key={i} value={`q-${i}`}>
               <Accordion.Header>
                 <Accordion.Trigger className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-semibold text-navy [&[data-state=open]>svg]:rotate-180">

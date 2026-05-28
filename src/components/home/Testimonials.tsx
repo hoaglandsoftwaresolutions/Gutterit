@@ -1,20 +1,36 @@
 import { Star } from "lucide-react";
 import { TESTIMONIALS } from "../../data/testimonials";
+import type { ServiceCategory } from "../../data/services";
 
-export function Testimonials() {
+type Props = {
+  heading?: string;
+  eyebrow?: string;
+  subhead?: string;
+  filterService?: ServiceCategory;
+};
+
+export function Testimonials({
+  heading = "Don't take our word for it.",
+  eyebrow = "From actual neighbors",
+  subhead = "Real reviews from real Chattanooga homeowners. 5 stars, 25+ jobs.",
+  filterService,
+}: Props) {
+  const filtered = filterService
+    ? TESTIMONIALS.filter((t) => t.services?.includes(filterService))
+    : TESTIMONIALS;
+  const items = filtered.length > 0 ? filtered : TESTIMONIALS;
+
   return (
     <section className="bg-navy">
       <div className="container py-16 md:py-20">
-        <p className="eyebrow text-amber-200">From actual neighbors</p>
+        <p className="eyebrow text-amber-200">{eyebrow}</p>
         <h2 className="mt-2 font-display text-3xl font-bold text-cream md:text-4xl">
-          Don't take our word for it.
+          {heading}
         </h2>
-        <p className="mt-3 text-sm text-cream/70">
-          Real reviews from real Chattanooga homeowners. 5 stars, 25+ jobs.
-        </p>
+        <p className="mt-3 text-sm text-cream/70">{subhead}</p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
+          {items.map((t) => (
             <article
               key={t.name}
               className="bg-white/5 rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 reveal"

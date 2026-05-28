@@ -28,11 +28,15 @@ export default {
           600: "#0284c7",
           700: "#036aa1",
         },
+        // Brand "accent" — historically amber, now repointed at the blue
+        // palette so the entire site reads as the blue theme. Class names
+        // (text-amber, bg-amber/15, etc.) are kept so the swap doesn't
+        // touch every component.
         amber: {
-          DEFAULT: "#d97706",
-          200: "#fbd388",
-          600: "#b45f03",
-          900: "#78350f",
+          DEFAULT: "#0284c7",
+          200: "#bae6fd",
+          600: "#036aa1",
+          900: "#0c2236",
         },
         cream: "#faf8f3",
         ink: "#1a1a1a",

@@ -10,19 +10,19 @@ export function Hero() {
         alt=""
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 h-full w-full object-cover opacity-40"
+        className="absolute inset-0 h-full w-full object-cover opacity-65"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-800/90 via-navy-700/65 to-amber-900/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-900/85 via-navy-800/45 to-transparent" />
 
-      <div className="relative container py-16 md:py-28 lg:py-32">
+      <div className="relative container py-20 md:py-36 lg:py-40">
         <p className="eyebrow text-amber-200 animate-fade-in-down">
           Chattanooga, TN · Hamilton County
         </p>
         <h1 className="mt-3 font-display text-3xl font-bold leading-tight text-white md:text-4xl drop-shadow-[0_2px_8px_rgba(15,41,66,0.35)] animate-fade-in">
-          Chattanooga Gutter Installation & Cleaning — Done Right the First Time
+          Best in Chattanooga Gutter Installation and Cleaning 
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-cream/85 animate-fade-in-up">
-          Locally owned and serving Chattanooga, Hixson, Signal Mountain, and East Ridge. Seamless gutter installation, repairs, cleaning, and guard systems built to handle Tennessee storms and the leaf load that comes with them. Free on-site estimates, straight pricing, and crews that show up when they say they will. Call or text for a quote — most jobs scheduled within the week.
+        <p className="mt-4 text-lg font-semibold text-cream/90 animate-fade-in-up md:text-xl">
+          Honest, Affordable, On Time.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <ButtonLink to="/contact">

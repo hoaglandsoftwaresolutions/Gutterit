@@ -1,7 +1,8 @@
 export type ServiceCategory =
+  | "installation"
   | "cleaning"
   | "repair"
-  | "installation"
+  | "gutter-guards"
   | "pressure-washing";
 
 export type Service = {
@@ -11,10 +12,26 @@ export type Service = {
   bullets: string[];
   priceLabel: string;
   priceShort: string;
-  icon: "Droplets" | "Wrench" | "Hammer" | "Sparkles";
+  icon: "Droplets" | "Wrench" | "Hammer" | "Sparkles" | "Shield";
 };
 
 export const SERVICES: Service[] = [
+  {
+    slug: "installation",
+    title: "Gutter Installation",
+    blurb:
+      "Seamless aluminum gutters formed on your driveway, cut to fit your roof line exactly.",
+    bullets: [
+      "Seamless gutters formed on-site to your roof line",
+      "Hidden hangers spaced for snow/ice load",
+      "Properly pitched downspouts and splash blocks",
+      "Tear-off and haul-away of old gutter material",
+      "5-year workmanship warranty in writing",
+    ],
+    priceLabel: "Free Quote",
+    priceShort: "Free Quote",
+    icon: "Hammer",
+  },
   {
     slug: "cleaning",
     title: "Gutter Cleaning",
@@ -46,30 +63,29 @@ export const SERVICES: Service[] = [
     icon: "Wrench",
   },
   {
-    slug: "installation",
-    title: "Gutter Installation",
+    slug: "gutter-guards",
+    title: "Gutter Guards",
     blurb:
-      "Seamless aluminum gutters formed on your driveway, cut to fit your roof line exactly.",
+      "Leaf-protection systems installed honestly — we'll tell you when they make sense and when they don't.",
     bullets: [
-      "Seamless gutters formed on-site to your roof line",
-      "Hidden hangers spaced for snow/ice load",
-      "Properly pitched downspouts and splash blocks",
-      "Tear-off and haul-away of old gutter material",
-      "5-year workmanship warranty in writing",
+      "Micro-mesh and reverse-curve options",
+      "Sized to your roof pitch and tree load",
+      "Installed over new or existing gutters",
+      "No high-pressure sales — straight talk on tradeoffs",
     ],
     priceLabel: "Free Quote",
     priceShort: "Free Quote",
-    icon: "Hammer",
+    icon: "Shield",
   },
   {
     slug: "pressure-washing",
     title: "Pressure Washing",
     blurb:
-      "Driveways, sidewalks, siding, and gutters cleaned without damage.",
+      "Gutter exteriors, driveways, sidewalks, and siding — cleaned without damage.",
     bullets: [
-      "House siding (vinyl, brick, fiber cement)",
+      "Gutter exterior streaks (tiger striping)",
       "Driveways and sidewalks",
-      "Gutter exterior streaks",
+      "House siding (vinyl, brick, fiber cement)",
       "Decks and patios",
     ],
     priceLabel: "Free Quote",

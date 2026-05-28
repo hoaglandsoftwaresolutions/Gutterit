@@ -1,9 +1,44 @@
-import { SERVICES, type Service } from "./services";
+import { SERVICES, type Service, type ServiceCategory } from "./services";
+import { SERVICE_DETAILS, type ServiceDetail } from "./serviceDetails";
 import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ } from "./faq";
 
 export const SITE_ORIGIN = "https://gutter-itllc.com";
+
+// Additional service names from the Google Business Profile listing that don't
+// map 1:1 to our top-level service slugs, but should still appear in the
+// LocalBusiness OfferCatalog so search engines see us offering them.
+const GBP_ADDITIONAL_SERVICES = [
+  "Seamless Gutter Installation",
+  "Gutter Replacement",
+  "Gutter Guard Installation",
+  "Leaf Guard Installation",
+  "Downspout Cleaning",
+  "Downspout Unclogging",
+  "Downspout Repair",
+  "Downspout Installation",
+  "Gutter Flushing",
+  "Roof Debris Removal",
+  "Gutter Inspection",
+  "Gutter Resealing",
+  "Gutter Realignment and Re-Pitching",
+  "Leak Repair",
+  "Fascia Repair",
+  "Soffit Repair",
+  "Rain Chain Installation",
+  "Rainwater Diversion",
+  "Splash Block Installation",
+  "Underground Downspout Drainage",
+  "Residential Gutter Services",
+  "Roof Cleaning",
+  "House Washing",
+  "Soft Washing",
+  "Driveway Cleaning",
+  "Concrete Cleaning",
+  "Deck Cleaning",
+  "Fence Cleaning",
+];
 
 export type PageSeo = {
   path: string;
@@ -46,7 +81,7 @@ export function getStaticRoutes(): PageSeo[] {
     path: "/services",
     title: "Services & Pricing | Gutter-It LLC, Chattanooga TN",
     description:
-      "Gutter cleaning from $100, repair from $50, seamless installation, and pressure washing in Chattanooga, TN. Honest pricing, written quotes, no surprises.",
+      "Gutter cleaning from $100, repair from $50, seamless installation, and pressure washing in Chattanooga, TN. Honest pricing, solid quotes, no surprises.",
     jsonLd: [
       breadcrumbSchema([
         { name: "Home", path: "/" },
@@ -56,18 +91,27 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
-  const gallery: PageSeo = {
-    path: "/gallery",
-    title: "Gallery | Gutter-It LLC, Chattanooga TN",
-    description:
-      "Before-and-after gutter cleaning, installation, repair, and pressure washing projects across Chattanooga and Hamilton County.",
-    jsonLd: [
-      breadcrumbSchema([
-        { name: "Home", path: "/" },
-        { name: "Gallery", path: "/gallery" },
-      ]),
-    ],
-  };
+  const servicePages: PageSeo[] = SERVICES.map((service) => {
+    const detail = SERVICE_DETAILS[service.slug];
+    return {
+      path: `/services/${service.slug}`,
+      title: detail.seo.metaTitle,
+      description: detail.seo.metaDescription,
+      ogImage: `${SITE_ORIGIN}${detail.hero.image}`,
+      jsonLd: [
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]),
+        serviceDetailSchema(service.slug, service),
+        ...(detail.faq.length ? [faqPageSchema(detail.faq)] : []),
+        ...(service.slug === "installation"
+          ? [installationHowToSchema(detail)]
+          : []),
+      ],
+    };
+  });
 
   const about: PageSeo = {
     path: "/about",
@@ -95,7 +139,7 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
-  return [home, services, gallery, about, contact];
+  return [home, services, ...servicePages, about, contact];
 }
 
 export function getAllRoutes(): PageSeo[] {
@@ -147,15 +191,21 @@ function localBusinessSchema() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Gutter & Exterior Services",
-      itemListElement: SERVICES.map((s) => ({
-        "@type": "Offer",
-        itemOffered: { "@type": "Service", name: s.title },
-        ...(s.slug === "cleaning"
-          ? { price: "100", priceCurrency: "USD" }
-          : s.slug === "repair"
-            ? { price: "50", priceCurrency: "USD" }
-            : {}),
-      })),
+      itemListElement: [
+        ...SERVICES.map((s) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: s.title },
+          ...(s.slug === "cleaning"
+            ? { price: "100", priceCurrency: "USD" }
+            : s.slug === "repair"
+              ? { price: "50", priceCurrency: "USD" }
+              : {}),
+        })),
+        ...GBP_ADDITIONAL_SERVICES.map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name },
+        })),
+      ],
     },
   };
 }
@@ -207,6 +257,45 @@ function serviceSchema(s: Service) {
           offers: {
             "@type": "Offer",
             price: s.slug === "cleaning" ? "100" : "50",
+            priceCurrency: "USD",
+          },
+        }
+      : {}),
+  };
+}
+
+function installationHowToSchema(detail: ServiceDetail) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How a seamless gutter install runs in Chattanooga",
+    description: detail.hero.lede,
+    step: detail.process.steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.title,
+      text: step.body,
+    })),
+  };
+}
+
+function serviceDetailSchema(slug: ServiceCategory, s: Service) {
+  const url = `${SITE_ORIGIN}/services/${slug}/`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: s.title,
+    name: s.title,
+    url,
+    provider: { "@id": `${SITE_ORIGIN}/#business` },
+    areaServed: AREAS.map((c) => `${c}, TN`),
+    description: s.blurb,
+    ...(slug === "cleaning" || slug === "repair"
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: slug === "cleaning" ? "100" : "50",
             priceCurrency: "USD",
           },
         }

@@ -1,24 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { BUSINESS } from "../../data/business";
+import { SERVICES } from "../../data/services";
 import { ButtonLink } from "../ui/Button";
 import { cn } from "../../lib/utils";
 
-const NAV = [
-  { to: "/services", label: "Services" },
-  { to: "/gallery", label: "Gallery" },
+const NAV_AFTER_SERVICES = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setServicesOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (!servicesRef.current?.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setServicesOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [servicesOpen]);
+
+  const onServicesRoute = location.pathname.startsWith("/services");
 
   return (
     <header className="sticky top-0 z-40 border-b border-navy/5 bg-cream/95 backdrop-blur">
@@ -41,7 +63,67 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
-          {NAV.map((item) => (
+          <div
+            ref={servicesRef}
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <Link
+              to="/services"
+              aria-haspopup="menu"
+              aria-expanded={servicesOpen}
+              onFocus={() => setServicesOpen(true)}
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-amber",
+                onServicesRoute ? "text-amber" : "text-navy/80",
+              )}
+            >
+              Services
+              <ChevronDown
+                className={cn(
+                  "h-4 w-4 transition-transform duration-200",
+                  servicesOpen && "rotate-180",
+                )}
+              />
+            </Link>
+            {servicesOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 overflow-hidden rounded-xl border border-navy/10 bg-white shadow-card before:absolute before:-top-3 before:left-0 before:h-3 before:w-full before:content-['']"
+              >
+                <Link
+                  to="/services"
+                  role="menuitem"
+                  className="block border-b border-navy/5 px-4 py-3 text-sm font-semibold text-navy hover:bg-cream"
+                >
+                  Services Overview
+                </Link>
+                <ul>
+                  {SERVICES.map((s) => (
+                    <li key={s.slug}>
+                      <NavLink
+                        to={`/services/${s.slug}`}
+                        role="menuitem"
+                        className={({ isActive }) =>
+                          cn(
+                            "block px-4 py-3 text-sm transition-colors hover:bg-cream",
+                            isActive
+                              ? "font-semibold text-amber"
+                              : "text-navy/80",
+                          )
+                        }
+                      >
+                        {s.title}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {NAV_AFTER_SERVICES.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -83,7 +165,36 @@ export function Header() {
       {open && (
         <div className="md:hidden border-t border-navy/5 bg-cream">
           <div className="container py-4 flex flex-col gap-1">
-            {NAV.map((item) => (
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                cn(
+                  "py-3 text-base font-semibold",
+                  isActive ? "text-amber" : "text-navy",
+                )
+              }
+            >
+              Services
+            </NavLink>
+            <div className="flex flex-col border-l-2 border-navy/10 pl-4">
+              {SERVICES.map((s) => (
+                <NavLink
+                  key={s.slug}
+                  to={`/services/${s.slug}`}
+                  className={({ isActive }) =>
+                    cn(
+                      "py-2.5 text-sm",
+                      isActive
+                        ? "font-semibold text-amber"
+                        : "text-navy/80",
+                    )
+                  }
+                >
+                  {s.title}
+                </NavLink>
+              ))}
+            </div>
+            {NAV_AFTER_SERVICES.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}

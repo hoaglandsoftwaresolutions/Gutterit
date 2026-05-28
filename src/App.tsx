@@ -4,7 +4,11 @@ import { Layout } from "./components/layout/Layout";
 import { useGlobalReveal } from "./lib/useGlobalReveal";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import Gallery from "./pages/Gallery";
+import Installation from "./pages/services/Installation";
+import Cleaning from "./pages/services/Cleaning";
+import Repair from "./pages/services/Repair";
+import GutterGuards from "./pages/services/GutterGuards";
+import PressureWashing from "./pages/services/PressureWashing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -31,7 +35,14 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="services" element={<Services />} />
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="services/installation" element={<Installation />} />
+          <Route path="services/cleaning" element={<Cleaning />} />
+          <Route path="services/repair" element={<Repair />} />
+          <Route path="services/gutter-guards" element={<GutterGuards />} />
+          <Route
+            path="services/pressure-washing"
+            element={<PressureWashing />}
+          />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
