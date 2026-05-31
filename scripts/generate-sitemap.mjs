@@ -14,7 +14,7 @@ ${routes
     const loc =
       r.path === "/"
         ? `${SITE_ORIGIN}/`
-        : `${SITE_ORIGIN}${r.path.endsWith("/") ? r.path : r.path + "/"}`;
+        : `${SITE_ORIGIN}${r.path.replace(/\/+$/, "")}`;
     return `  <url>
     <loc>${loc}</loc>
     <lastmod>${today}</lastmod>

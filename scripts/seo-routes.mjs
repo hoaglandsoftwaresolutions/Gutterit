@@ -2,7 +2,7 @@
 // import it without a TS toolchain. If you add a new service or static page,
 // update both this file and src/data/seo.ts.
 
-export const SITE_ORIGIN = "https://gutter-itllc.com";
+export const SITE_ORIGIN = "https://gutteritllc.com";
 
 export const AREAS = [
   "Chattanooga",
@@ -126,7 +126,7 @@ export const FAQ = [
 
 function fullUrl(path) {
   if (path === "/") return `${SITE_ORIGIN}/`;
-  return `${SITE_ORIGIN}${path.endsWith("/") ? path : path + "/"}`;
+  return `${SITE_ORIGIN}${path.replace(/\/+$/, "")}`;
 }
 
 // ----- structured-data builders -----
@@ -252,7 +252,7 @@ function installationHowToSchema(howTo) {
 }
 
 function serviceDetailSchema(s) {
-  const url = `${SITE_ORIGIN}/services/${s.slug}/`;
+  const url = `${SITE_ORIGIN}/services/${s.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",

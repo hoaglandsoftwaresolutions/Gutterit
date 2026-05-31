@@ -13,7 +13,7 @@ export function Seo({
   title,
   description,
   canonical,
-  ogImage = "https://gutter-itllc.com/images/hero/hero-main.jpg",
+  ogImage = "https://gutteritllc.com/images/hero/hero-main.jpg",
   jsonLd,
   noindex = false,
 }: Props) {

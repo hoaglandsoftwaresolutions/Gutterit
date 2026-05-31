@@ -4,7 +4,7 @@ import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ } from "./faq";
 
-export const SITE_ORIGIN = "https://gutter-itllc.com";
+export const SITE_ORIGIN = "https://gutteritllc.com";
 
 // Additional service names from the Google Business Profile listing that don't
 // map 1:1 to our top-level service slugs, but should still appear in the
@@ -54,10 +54,7 @@ export function serviceSlug(service: Service) {
 
 function fullUrl(path: string) {
   if (path === "/") return `${SITE_ORIGIN}/`;
-  return `${SITE_ORIGIN}${path.endsWith("/") ? path : path + "/"}`.replace(
-    /\/+$/,
-    path === "/" ? "/" : "/",
-  );
+  return `${SITE_ORIGIN}${path.replace(/\/+$/, "")}`;
 }
 
 // Stable, build-time list of all routes that should be pre-rendered, sitemapped,
@@ -280,7 +277,7 @@ function installationHowToSchema(detail: ServiceDetail) {
 }
 
 function serviceDetailSchema(slug: ServiceCategory, s: Service) {
-  const url = `${SITE_ORIGIN}/services/${slug}/`;
+  const url = `${SITE_ORIGIN}/services/${slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
