@@ -187,7 +187,7 @@ export function ServiceDetailPage({ detail, path }: Props) {
 
       {detail.faq.length > 0 && (
         <Faq
-          heading="Questions about this service."
+          heading="Questions about gutter repair."
           intro="If your question isn't here, call. We'd rather talk it through."
           items={detail.faq}
         />

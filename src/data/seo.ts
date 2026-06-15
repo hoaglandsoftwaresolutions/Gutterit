@@ -194,7 +194,7 @@ function localBusinessSchema() {
           itemOffered: { "@type": "Service", name: s.title },
           ...(s.slug === "cleaning"
             ? { price: "100", priceCurrency: "USD" }
-            : s.slug === "repair"
+            : s.slug === "gutter-repair"
               ? { price: "50", priceCurrency: "USD" }
               : {}),
         })),
@@ -249,7 +249,7 @@ function serviceSchema(s: Service) {
     provider: { "@id": `${SITE_ORIGIN}/#business` },
     areaServed: AREAS.map((c) => `${c}, TN`),
     description: s.blurb,
-    ...(s.slug === "cleaning" || s.slug === "repair"
+    ...(s.slug === "cleaning" || s.slug === "gutter-repair"
       ? {
           offers: {
             "@type": "Offer",
@@ -288,7 +288,7 @@ function serviceDetailSchema(slug: ServiceCategory, s: Service) {
     provider: { "@id": `${SITE_ORIGIN}/#business` },
     areaServed: AREAS.map((c) => `${c}, TN`),
     description: s.blurb,
-    ...(slug === "cleaning" || slug === "repair"
+    ...(slug === "cleaning" || slug === "gutter-repair"
       ? {
           offers: {
             "@type": "Offer",

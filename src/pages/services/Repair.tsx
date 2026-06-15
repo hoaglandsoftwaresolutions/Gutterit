@@ -4,8 +4,8 @@ import { SERVICE_DETAILS } from "../../data/serviceDetails";
 export default function Repair() {
   return (
     <ServiceDetailPage
-      detail={SERVICE_DETAILS.repair}
-      path="/services/repair"
+      detail={SERVICE_DETAILS["gutter-repair"]}
+      path="/services/gutter-repair"
     />
   );
 }

@@ -250,7 +250,7 @@ const INSTALLATION: ServiceDetail = {
       a: "Sectional gutters come in 10-foot store-bought pieces that get joined with sealed connectors. Every connector is a future leak. Seamless gutters are formed in one continuous run on-site, so there are no joints between corners. They cost a little more upfront and they're worth every dollar.",
     },
   ],
-  related: ["cleaning", "gutter-guards", "repair"],
+  related: ["cleaning", "gutter-guards", "gutter-repair"],
   seo: {
     metaTitle:
       "Gutter Installation in Chattanooga, TN | Seamless Aluminum | Gutter-It LLC",
@@ -437,7 +437,7 @@ const CLEANING: ServiceDetail = {
       a: "Inside. Every section gets hand-cleared. We're not running a leaf blower along the top and calling it done.",
     },
   ],
-  related: ["repair", "gutter-guards", "pressure-washing"],
+  related: ["gutter-repair", "gutter-guards", "pressure-washing"],
   seo: {
     metaTitle:
       "Gutter Cleaning in Chattanooga, TN | From $100 | Gutter-It LLC",
@@ -447,17 +447,17 @@ const CLEANING: ServiceDetail = {
 };
 
 const REPAIR: ServiceDetail = {
-  slug: "repair",
+  slug: "gutter-repair",
   hero: {
     eyebrow: "Chattanooga · Hamilton County",
-    h1: "Gutter repair without selling you a whole new system.",
+    h1: "Professional Gutter repair in Chattanooga, TN.",
     lede:
-      "Sagging sections, leaky seams, broken downspouts, separated corners. Most fixes run $50–$200 and take an hour or two. We'll tell you straight when repair is the answer and when it isn't.",
+      "Sagging sections, leaky seams, broken downspouts, separated corners. Most fixes run $50–$200 and take an hour or two. We are honest if it will need to be fixed or replaced.",
     image: "/images/jobs/repair/undergutter.jpg",
     imageAlt: "Gutter repair work on a Chattanooga home",
   },
   intro: {
-    heading: "Why a small gutter problem turns into a big one.",
+    heading: "Why a small gutter problem turns into a big gutter repair.",
     image: {
       src: "/images/jobs/repair/damaged-gutter-fascia-v3.jpg",
       alt: "Damaged aluminum gutter with split fascia board and cracked soffit on a Chattanooga home",
@@ -492,7 +492,7 @@ const REPAIR: ServiceDetail = {
     ],
   },
   whatsIncluded: {
-    heading: "What a typical repair visit covers.",
+    heading: "What a typical gutter repair visit covers.",
     items: [
       {
         title: "Re-hang sagging sections",
@@ -548,7 +548,7 @@ const REPAIR: ServiceDetail = {
     ],
   },
   process: {
-    heading: "How a repair visit runs.",
+    heading: "How a gutter repair visit runs.",
     steps: [
       {
         title: "Walk the house with you",
@@ -577,7 +577,7 @@ const REPAIR: ServiceDetail = {
     },
   ],
   pricing: {
-    headline: "What repair actually costs.",
+    headline: "What gutter repair actually costs.",
     body: [
       "Most repairs run $50 to $200. Small jobs — a single resealed corner or a re-pitched 10-foot section — sit on the low end. Multi-section re-hangs and downspout replacements push toward the higher end.",
       "If you've got several issues, we can usually bundle them on one visit. A $50 seam plus a $90 re-hang plus a $40 downspout doesn't add up to three trip charges — it's one visit.",
@@ -590,7 +590,7 @@ const REPAIR: ServiceDetail = {
     ],
   },
   serviceArea: {
-    heading: "Repair calls across Hamilton County.",
+    heading: "Gutter repair calls across Hamilton County.",
     body: [
       "We answer repair calls anywhere we clean and install. Most repair work happens in Chattanooga, Hixson, East Brainerd, Red Bank, and East Ridge.",
       "Storm damage gets prioritized — if water is actively making your house wet, call instead of using the contact form.",
@@ -772,7 +772,7 @@ const GUTTER_GUARDS: ServiceDetail = {
       a: "No, and don't believe anyone who says so. Guards reduce cleaning dramatically — usually from two or three visits a year to one — but the tops of the guards still collect debris and need a periodic brush-off. We're honest about this on every quote.",
     },
   ],
-  related: ["installation", "cleaning", "repair"],
+  related: ["installation", "cleaning", "gutter-repair"],
   seo: {
     metaTitle:
       "Gutter Guards in Chattanooga, TN | Honest Advice | Gutter-It LLC",
@@ -950,7 +950,7 @@ const PRESSURE_WASHING: ServiceDetail = {
       a: "Yes, and it's the most common bundle we do. Adding gutter exterior wash to a cleaning visit usually adds $75–$125 depending on the linear footage.",
     },
   ],
-  related: ["cleaning", "gutter-guards", "repair"],
+  related: ["cleaning", "gutter-guards", "gutter-repair"],
   seo: {
     metaTitle:
       "Pressure Washing in Chattanooga, TN | Gutters, Driveways, Siding | Gutter-It LLC",
@@ -962,7 +962,7 @@ const PRESSURE_WASHING: ServiceDetail = {
 export const SERVICE_DETAILS: Record<ServiceCategory, ServiceDetail> = {
   installation: INSTALLATION,
   cleaning: CLEANING,
-  repair: REPAIR,
+  "gutter-repair": REPAIR,
   "gutter-guards": GUTTER_GUARDS,
   "pressure-washing": PRESSURE_WASHING,
 };

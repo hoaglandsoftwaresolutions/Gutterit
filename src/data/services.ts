@@ -1,7 +1,7 @@
 export type ServiceCategory =
   | "installation"
   | "cleaning"
-  | "repair"
+  | "gutter-repair"
   | "gutter-guards"
   | "pressure-washing";
 
@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
     icon: "Droplets",
   },
   {
-    slug: "repair",
+    slug: "gutter-repair",
     title: "Gutter Repair",
     blurb:
       "Sagging sections, leaky seams, broken downspouts — fixed without selling you a full replacement.",

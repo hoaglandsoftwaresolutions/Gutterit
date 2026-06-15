@@ -27,7 +27,7 @@ const ICONS: Record<string, LucideIcon> = {
 const WHEN_YOU_NEED_IT: Record<string, string> = {
   installation: "New construction, full replacement, or a new roof line",
   cleaning: "Twice a year for most homes — more if you've got pines",
-  repair: "Sagging, leaks, separations after a storm",
+  "gutter-repair": "Sagging, leaks, separations after a storm",
   "gutter-guards": "Heavy leaf load and you're tired of climbing the ladder",
   "pressure-washing": "Tiger-striped gutters, mossy driveways, dingy siding",
 };

@@ -9,6 +9,11 @@
 # Wix booking page → our contact/quote page.
 /book-online             /contact                       301
 
+# The gutter-repair service page was renamed from /services/repair. Keep the
+# old slug 301'd to the new URL so its existing index entry transfers.
+/services/repair         /services/gutter-repair        301
+/services/repair/        /services/gutter-repair        301
+
 # Wix service pages lived under /service-page/<slug>. Map the ones we can
 # resolve precisely, then catch the rest at the Services index.
 # (The pressure-washing entry carries Wix's original "wahsing" typo.)
@@ -16,7 +21,7 @@
 /service-page/pressure-washing    /services/pressure-washing    301
 /service-page/gutter-installation /services/installation        301
 /service-page/gutter-cleaning     /services/cleaning            301
-/service-page/gutter-repair       /services/repair              301
+/service-page/gutter-repair       /services/gutter-repair       301
 /service-page/gutter-guards       /services/gutter-guards       301
 /service-page/*                   /services                     301
 
@@ -42,7 +47,7 @@
 /services/                       /services                     301
 /services/installation/          /services/installation        301
 /services/cleaning/              /services/cleaning            301
-/services/repair/                /services/repair              301
+/services/gutter-repair/         /services/gutter-repair       301
 /services/gutter-guards/         /services/gutter-guards       301
 /services/pressure-washing/      /services/pressure-washing    301
 /about/                          /about                        301

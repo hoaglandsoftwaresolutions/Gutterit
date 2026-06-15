@@ -67,7 +67,7 @@ export const SERVICES = [
     price: { value: "100", currency: "USD" },
   },
   {
-    slug: "repair",
+    slug: "gutter-repair",
     title: "Gutter Repair",
     blurb:
       "Sagging sections, leaky seams, broken downspouts — fixed without selling you a full replacement.",
@@ -376,7 +376,7 @@ export const SERVICE_PAGE_META = {
       },
     ],
   },
-  repair: {
+  "gutter-repair": {
     title:
       "Gutter Repair in Chattanooga, TN | From $50 | Gutter-It LLC",
     description:

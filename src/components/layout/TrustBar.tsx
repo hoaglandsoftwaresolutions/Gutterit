@@ -2,7 +2,7 @@ import { Clock, MapPin, Phone, ShieldCheck } from "lucide-react";
 
 const ITEMS = [
   { icon: ShieldCheck, label: "Licensed & insured" },
-  { icon: Phone, label: "We answer the phone" },
+  { icon: Phone, label: "Call to get scheduled" },
   { icon: MapPin, label: "Based in Chattanooga" },
   { icon: Clock, label: "Same-day call backs" },
 ] as const;

@@ -53,7 +53,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/services/repair" className="hover:text-white">
+              <Link to="/services/gutter-repair" className="hover:text-white">
                 Gutter Repair
               </Link>
             </li>
@@ -106,6 +106,14 @@ export function Footer() {
               <span>{BUSINESS.hours}</span>
             </li>
           </ul>
+          <iframe
+            title="Gutter-It LLC location on Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667186.2086434828!2d-85.32276045!3d35.3004385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472a3c34fb6a7cf3%3A0xc5feb40263a52d42!2sGutter%20It!5e0!3m2!1sen!2sus!4v1781489259288!5m2!1sen!2sus"
+            className="mt-4 h-40 w-full rounded-lg border border-white/10"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         <div>

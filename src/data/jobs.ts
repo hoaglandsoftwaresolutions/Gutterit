@@ -25,7 +25,7 @@ export const JOBS: Job[] = [
   },
   {
     id: "repair-soffit",
-    category: "repair",
+    category: "gutter-repair",
     title: "Re-secured gutter and soffit on a brick home",
     alt: "Gutter and ventilated soffit detail on the corner of a brick home",
     image: "/images/jobs/repair/undergutter.jpg",

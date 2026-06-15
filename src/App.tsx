@@ -37,7 +37,7 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="services/installation" element={<Installation />} />
           <Route path="services/cleaning" element={<Cleaning />} />
-          <Route path="services/repair" element={<Repair />} />
+          <Route path="services/gutter-repair" element={<Repair />} />
           <Route path="services/gutter-guards" element={<GutterGuards />} />
           <Route
             path="services/pressure-washing"

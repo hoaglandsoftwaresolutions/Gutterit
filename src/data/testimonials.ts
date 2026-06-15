@@ -23,10 +23,10 @@ export const TESTIMONIALS: Testimonial[] = [
     services: ["installation"],
   },
   {
-    name: "Tom L.",
-    city: "Collegedale",
+    name: "Sean H.",
+    city: "Hixson",
     quote:
-      "We thought we needed a full replacement. Jakob came out, looked at it, and told us it was really just two bad sections — saved us about $1,800. Hard to find contractors who'll talk you OUT of work. Hiring him for the pressure washing next.",
-    services: ["repair", "pressure-washing"],
+      "I had a corner gutter that was leaking for so long which caused the fascia and soffit to rot. Jakob came out to my house in Hixson and fixed it in no time! He was very professional, honest, and did a great job!",
+    services: ["gutter-repair", "installation"],
   },
 ];
