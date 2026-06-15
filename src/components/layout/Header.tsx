@@ -8,6 +8,7 @@ import { cn } from "../../lib/utils";
 
 const NAV_AFTER_SERVICES = [
   { to: "/about", label: "About" },
+  { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ] as const;
 

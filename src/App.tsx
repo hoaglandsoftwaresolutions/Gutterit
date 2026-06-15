@@ -11,6 +11,7 @@ import GutterGuards from "./pages/services/GutterGuards";
 import PressureWashing from "./pages/services/PressureWashing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import FaqPage from "./pages/Faq";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -44,6 +45,7 @@ export default function App() {
             element={<PressureWashing />}
           />
           <Route path="about" element={<About />} />
+          <Route path="faq" element={<FaqPage />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>

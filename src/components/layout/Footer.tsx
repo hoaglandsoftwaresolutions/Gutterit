@@ -137,6 +137,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/faq" className="hover:text-white">
+                FAQ
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" className="font-semibold hover:text-white">
                 Get a Quote →
               </Link>

@@ -31,3 +31,34 @@ export const FAQ_INSTALLATION_COST: FaqItem = {
   q: "How much does a full seamless gutter installation cost?",
   a: "For aluminum seamless gutters in Chattanooga, expect roughly $5.40–$9.40 per linear foot installed — so a typical 150-foot home runs around $800–$1,400. We give a fixed written quote on-site after we measure. No padded estimates over the phone.",
 };
+
+// Extended FAQ used on the dedicated /faq page. Starts with the core questions
+// shown on the home page, then adds service-specific and logistics questions.
+export const FAQ_FULL: FaqItem[] = [
+  ...FAQ,
+  FAQ_INSTALLATION_COST,
+  {
+    q: "What areas do you serve?",
+    a: "We're based in Chattanooga and serve the surrounding Hamilton County area — including Hixson, East Brainerd, Ooltewah, Signal Mountain, Lookout Mountain, Soddy-Daisy, Red Bank, East Ridge, and Collegedale. If you're nearby and not on that list, call us anyway and we'll let you know.",
+  },
+  {
+    q: "Are you licensed and insured?",
+    a: "Yes. Gutter-It LLC is a licensed, insured, locally owned business. If anything goes wrong on your property, you're covered — and we're happy to show proof of insurance before we start.",
+  },
+  {
+    q: "Do you offer free quotes?",
+    a: "Yes. Quotes are free and we give you a firm, written number on-site before any work begins. We don't do high-pressure sales or padded phone estimates.",
+  },
+  {
+    q: "How do I get on the schedule?",
+    a: "Call or text (423) 475-3158, email jakobdemoss@gutter-itllc.com, or request a quote through the contact page. You'll get a same-day callback, and most on-site quotes happen within 2–4 business days.",
+  },
+  {
+    q: "What's the difference between pressure washing and soft washing?",
+    a: "Pressure washing uses high-pressure water for hard surfaces like driveways and concrete. Soft washing uses low pressure plus a cleaning solution for delicate surfaces like roofs, siding, and painted areas — so we don't damage shingles or force water behind your siding. We choose the right method for each surface.",
+  },
+  {
+    q: "Can you clean my gutters and pressure wash on the same visit?",
+    a: "Yes, bundling is the most common job we do. Adding a gutter exterior wash to a cleaning visit usually adds $75–$125 depending on the linear footage, and combining services saves you a second trip charge.",
+  },
+];

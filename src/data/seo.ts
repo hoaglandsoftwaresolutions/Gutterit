@@ -2,7 +2,7 @@ import { SERVICES, type Service, type ServiceCategory } from "./services";
 import { SERVICE_DETAILS, type ServiceDetail } from "./serviceDetails";
 import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
-import { FAQ } from "./faq";
+import { FAQ, FAQ_FULL } from "./faq";
 
 export const SITE_ORIGIN = "https://www.gutteritllc.com";
 
@@ -123,6 +123,20 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
+  const faq: PageSeo = {
+    path: "/faq",
+    title: "FAQ | Gutter-It LLC, Chattanooga TN",
+    description:
+      "Answers to common gutter questions in Chattanooga — cleaning frequency and cost, repair vs. replacement, gutter guards, pressure washing, service area, and how to get a free quote.",
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "FAQ", path: "/faq" },
+      ]),
+      faqPageSchema(FAQ_FULL),
+    ],
+  };
+
   const contact: PageSeo = {
     path: "/contact",
     title: "Contact | Gutter-It LLC, Chattanooga TN",
@@ -136,7 +150,7 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
-  return [home, services, ...servicePages, about, contact];
+  return [home, services, ...servicePages, about, faq, contact];
 }
 
 export function getAllRoutes(): PageSeo[] {
