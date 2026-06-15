@@ -53,15 +53,15 @@ const INSTALLATION: ServiceDetail = {
     imageAlt: "Seamless aluminum gutter installed along a Chattanooga roof line",
   },
   intro: {
-    heading: "What a real install actually looks like.",
+    heading: "What a real gutter installation actually looks like.",
     body: [
-      "Most homes in Hamilton County are running 5-inch K-style aluminum, and for good reason — it handles the rainfall we get here without overwhelming the fascia. We pull up with a roll of coil aluminum, set the machine on your driveway, and form each run to the exact length of the roof line above it. No splices in the middle of a 40-foot run unless your roof bends.",
+      "Most homes in Hamilton County are running 6-inch K-style aluminum, and for good reason — it handles the rainfall we get here without overwhelming the fascia. We pull up with a roll of coil aluminum, set the machine on your driveway, and form each run to the exact length of the roof line above it. No splices in the middle of a 40-foot run unless your roof bends.",
       "We don't subcontract. The same crew that quotes the job hangs the gutters and walks the work with you before we get paid. If you've ever had a contractor disappear after the deposit cleared and a different crew show up that didn't know what was promised — that's not how this goes.",
       "Tear-off, install, and haul-away on a typical 150-foot home runs about a day. Bigger or steeper jobs take two. We don't leave a pile of bent aluminum in your yard, and we don't leave hanger screws in the grass for your kids to find with their feet.",
     ],
   },
   signs: {
-    heading: "When new gutters actually make sense.",
+    heading: "When a new gutter installation actually make sense.",
     items: [
       {
         title: "The fascia behind the gutter is soft or rotting",
@@ -90,7 +90,7 @@ const INSTALLATION: ServiceDetail = {
     ],
   },
   whatsIncluded: {
-    heading: "Everything that goes into a Gutter-It install.",
+    heading: "Everything that goes into gutter installation.",
     items: [
       {
         title: "On-site measurement and a written quote",
@@ -101,7 +101,7 @@ const INSTALLATION: ServiceDetail = {
         body: "Old aluminum goes in the truck and gets recycled. Old hardware, brackets, and downspouts go with it. You don't have to call the city for a pickup.",
       },
       {
-        title: "Seamless 5-inch aluminum, formed on-site",
+        title: "Seamless 6-inch aluminum, formed on-site",
         body: "Standard is .027-gauge aluminum in your choice of color. We can upgrade to .032 for big runs or coastal-style homes that need it. We bring the swatch book.",
       },
       {
@@ -158,7 +158,7 @@ const INSTALLATION: ServiceDetail = {
     ],
   },
   process: {
-    heading: "How install day actually runs.",
+    heading: "What gutter installation day actually looks like.",
     steps: [
       {
         title: "Walk-through and final measurement",
@@ -189,7 +189,7 @@ const INSTALLATION: ServiceDetail = {
   materials: {
     heading: "What's actually on your house when we leave.",
     body: [
-      "Standard install is 5-inch K-style aluminum in .027 gauge. That's the right call for 90% of Chattanooga homes — it handles the rain, it doesn't dent from a falling branch, and it's the same profile that matches your neighbors' so resale doesn't suffer. Color options run from white and almond to dark bronze and matte black. We bring the swatch.",
+      "Standard install is 6-inch K-style aluminum in .027 gauge. That's the right call for 90% of Chattanooga homes — it handles the rain, it doesn't dent from a falling branch, and it's the same profile that matches your neighbors' so resale doesn't suffer. Color options run from white and almond to dark bronze and matte black. We bring the swatch.",
       "If you've got a steep roof, a long run over 40 feet, or you're on Signal Mountain catching ice, we'll quote .032 gauge instead. Thicker aluminum holds its shape better under load and resists denting from ice slides. Costs about $1.20 more per foot installed.",
       "Hangers are hidden — meaning they sit inside the gutter and screw up through the back into the fascia. You don't see them from the ground, and they hold better than the old spike-and-ferrule hardware you'll see on 1980s installs. We use #10 lag screws, not roofing nails, every time.",
       "Downspouts default to 3x4 inch rectangular. They move roughly twice the water of a 2x3 inch and they don't clog the way smaller ones do. We size up to 4x5 on jobs with more than 1,500 square feet of roof draining to one corner.",
@@ -204,9 +204,9 @@ const INSTALLATION: ServiceDetail = {
     },
   ],
   pricing: {
-    headline: "What a full install costs in Chattanooga.",
+    headline: "What a full gutter installation costs in Chattanooga.",
     body: [
-      "For standard 5-inch aluminum seamless installed, expect roughly $5.40 to $9.40 per linear foot. The wider range covers gauge upgrade, downspout count, height (one story vs two), and whether the fascia needs work before we hang anything.",
+      "For standard 6-inch aluminum seamless installed, expect roughly $5.40 to $9.40 per linear foot. The wider range covers gauge upgrade, downspout count, height (one story vs two), and whether the fascia needs work before we hang anything.",
       "A typical 1,500-square-foot home runs around 130 to 170 linear feet of gutter — so most installs land between $800 and $1,500. Larger homes with multiple roof lines, dormers, or two stories on the back can run $1,800 to $3,000.",
       "We give a fixed written quote on-site after we measure. No padded phone estimates, no 'change orders' halfway through the day.",
     ],
@@ -218,7 +218,7 @@ const INSTALLATION: ServiceDetail = {
     ],
   },
   serviceArea: {
-    heading: "We install all over Hamilton County.",
+    heading: "We proudly do gutter installation all over Hamilton County.",
     body: [
       "We're based in Chattanooga and work everywhere from Soddy-Daisy to Collegedale. About a third of our installs are in the Hixson and Signal Mountain corridors — older homes with original gutters that have done their forty years and need to come down.",
       "If you're outside Hamilton County, call anyway. We've gone as far as Ringgold and Cleveland for the right job.",
@@ -270,9 +270,9 @@ const CLEANING: ServiceDetail = {
     imageAlt: "Leaves and pine needles packed into a Chattanooga gutter",
   },
   intro: {
-    heading: "What it means to actually clean a gutter.",
+    heading: "What gutter cleaning actually means.",
     body: [
-      "Most 'cleanings' you'll pay $80 for are someone running a leaf blower along the top of the gutter, scattering half the debris into your shrubs and missing every downspout. We don't work that way. Every section gets cleared by hand. Every downspout gets a hose run through it until water comes out the bottom clean.",
+      "Most 'gutter cleaning' you'll pay $80 for are someone running a leaf blower along the top of the gutter, scattering half the debris into your shrubs and missing every downspout. We don't work that way. Every section gets cleared by hand. Every downspout gets a hose run through it until water comes out the bottom clean.",
       "If a downspout is blocked under the ground line where we can't see it, we'll tell you and quote the fix before we touch it. We don't surprise you with a $300 charge on a $120 visit.",
       "Twice a year is the right rhythm for most homes in Chattanooga — once in late spring after the oaks and maples drop their pollen and seed pods, and once in late fall after the leaves come down. Homes with pine or hemlock cover usually need a third visit because needles fall year-round and they pack downspouts like a wick.",
     ],
@@ -298,7 +298,7 @@ const CLEANING: ServiceDetail = {
       },
       {
         title: "Sagging sections",
-        body: "A gutter packed with wet debris is heavy. If a section is dipping or pulling away from the fascia, it's overloaded. Cleaning solves the immediate problem; we can also tell you if the hangers need re-spacing.",
+        body: "A gutter packed with wet debris is heavy. If a section is dipping or pulling away from the fascia, it's overloaded. Correct gutter cleaning solves the immediate problem; we can also tell you if the hangers need re-spacing.",
       },
       {
         title: "Mosquitoes around the porch",
@@ -307,7 +307,7 @@ const CLEANING: ServiceDetail = {
     ],
   },
   whatsIncluded: {
-    heading: "What every cleaning visit covers.",
+    heading: "What every gutter cleaning visit covers.",
     items: [
       {
         title: "Hand-removal of all debris",
@@ -359,7 +359,7 @@ const CLEANING: ServiceDetail = {
     ],
   },
   process: {
-    heading: "How a typical visit runs.",
+    heading: "How a typical gutter cleaning visit runs.",
     steps: [
       {
         title: "Walk-around and quote confirmation",
@@ -396,7 +396,7 @@ const CLEANING: ServiceDetail = {
     },
   ],
   pricing: {
-    headline: "What a cleaning costs.",
+    headline: "What a gutter cleaning service costs.",
     body: [
       "Single-story homes typically run $100–$175. Two-story homes are $150–$250 depending on roof line, gutter linear footage, and how much debris is in there.",
       "We give a firm number before we start, written on the receipt. If we find a clogged underground downspout or a section that needs repair, we quote it separately so you can decide — we don't tack it onto the cleaning total without asking.",
@@ -409,10 +409,10 @@ const CLEANING: ServiceDetail = {
     ],
   },
   serviceArea: {
-    heading: "We clean gutters across Hamilton County.",
+    heading: "Gutter cleaning is a major service across Hamilton County.",
     body: [
       "Most weeks we're working in Chattanooga, Hixson, East Brainerd, and Ooltewah. We also cover Signal Mountain and Lookout Mountain — those routes take a little longer because of the drive, but the visit price stays the same.",
-      "If you're scheduling a fall cleaning, get on the list in September. We book up tight from late October through Thanksgiving.",
+      "If you're scheduling a fall gutter cleaning, get on the list in September. We book up tight from late October through Thanksgiving.",
     ],
   },
   faq: [
@@ -425,7 +425,7 @@ const CLEANING: ServiceDetail = {
       a: "Most single-story homes in the Chattanooga area run $100–$175. Two-story homes are typically $150–$250 depending on roof line and accessibility. We give a firm number on-site before we start — no surprise add-ons after the work is done.",
     },
     {
-      q: "Do I need to be home for the cleaning?",
+      q: "Do I need to be home for a gutter cleaning service?",
       a: "No. We work outside the house. If we need to access a side gate or pet area, just let us know when you book. Payment can be left, mailed, or done by card after we send the invoice.",
     },
     {
@@ -442,7 +442,7 @@ const CLEANING: ServiceDetail = {
     metaTitle:
       "Gutter Cleaning in Chattanooga, TN | From $100 | Gutter-It LLC",
     metaDescription:
-      "Hand-clean gutter service in Chattanooga from $100. Every section cleared, downspouts flushed, debris hauled away. Same-day callback, free quotes.",
+      "Gutter cleaning service in Chattanooga from $100. Every section cleared, downspouts flushed, debris hauled away. Same-day callback, free quotes.",
   },
 };
 
@@ -634,18 +634,18 @@ const GUTTER_GUARDS: ServiceDetail = {
     imageAlt: "Gutter line on a Chattanooga home suitable for guard installation",
   },
   intro: {
-    heading: "The honest version of the guard conversation.",
+    heading: "The honest version of the gutter guard conversation.",
     body: [
-      "Big-name guard companies sell a story: install our system and you'll never clean your gutters again. The reality is more nuanced. Good guards reduce cleaning frequency a lot, but they don't eliminate it. Pine needles, shingle grit, oak tassels in May, and roof tar still build up on top of any guard system. They just don't fall into the gutter.",
+      "Big-name guard companies sell a story: install our system and you'll never clean your gutters again. The reality is more nuanced. Good gutter guards reduce cleaning frequency a lot, but they don't eliminate it. Pine needles, shingle grit, oak tassels in May, and roof tar still build up on top of any guard system. They just don't fall into the gutter.",
       "For homes with heavy tree cover, that tradeoff is worth it — two roof-top brushings a year beats two ladder-and-bucket cleanings. For homes with light tree load, two normal cleanings is cheaper than a $3,000 guard install. We install what makes sense for your situation, not what makes us the most commission.",
     ],
   },
   signs: {
-    heading: "When guards are worth it.",
+    heading: "When gutter guards are worth it.",
     items: [
       {
         title: "Heavy oak, maple, or pine canopy directly over the roof",
-        body: "If you're cleaning gutters three or more times a year and still finding clogs, guards pay back in a few seasons.",
+        body: "If you're cleaning gutters three or more times a year and still finding clogs, gutter guards pay back in a few seasons.",
       },
       {
         title: "Two-story home with steep gutter access",
@@ -653,16 +653,16 @@ const GUTTER_GUARDS: ServiceDetail = {
       },
       {
         title: "Health or mobility makes ladder work risky for you",
-        body: "Some homeowners just shouldn't be on a 24-foot ladder. Guards plus an annual brush-off is the right answer.",
+        body: "Some homeowners just shouldn't be on a 24-foot ladder. Gutter guards plus an annual brush-off is the right answer.",
       },
       {
         title: "Long stretches between visits you'd actually pay for",
-        body: "If you'd rather not think about gutters for two years, guards make that realistic for most homes — with a roof rinse on the schedule.",
+        body: "If you'd rather not think about gutters for two years, gutter guards make that realistic for most homes — with a roof rinse on the schedule.",
       },
     ],
   },
   whatsIncluded: {
-    heading: "What a guard install looks like.",
+    heading: "What a gutter guard install looks like.",
     items: [
       {
         title: "On-site assessment first",
@@ -670,7 +670,7 @@ const GUTTER_GUARDS: ServiceDetail = {
       },
       {
         title: "Pre-install gutter cleaning",
-        body: "Guards go on clean gutters or they're useless. A full cleaning is included in the install price.",
+        body: "Gutter guards go on clean gutters or they're useless. A full cleaning is included in the install price.",
       },
       {
         title: "Micro-mesh or reverse-curve, your choice",
@@ -678,18 +678,18 @@ const GUTTER_GUARDS: ServiceDetail = {
       },
       {
         title: "Sized to your roof pitch and gutter width",
-        body: "Generic guards from big-box stores fit poorly and lift in wind. We size and pitch the guard to your specific roof line.",
+        body: "Generic gutter guards from big-box stores fit poorly and lift in wind. We size and pitch the guard to your specific roof line.",
       },
       {
         title: "Installed without voiding your roof warranty",
-        body: "We don't lift shingles or drill into the roof. Guards attach to the gutter, not the roofing material.",
+        body: "We don't lift shingles or drill into the roof. Gutter guards attach to the gutter, not the roofing material.",
       },
     ],
   },
   alsoIncludes: {
-    heading: "Guard options we install.",
+    heading: "Gutter guard options we install.",
     intro:
-      "We install guards on new and existing gutters. We'll talk through which system actually pays back for your roof and tree load before you commit.",
+      "We install gutter guards on new and existing gutters. We'll talk through which system actually pays back for your roof and tree load before you commit.",
     items: [
       {
         name: "Gutter Guard Installation",
@@ -700,21 +700,21 @@ const GUTTER_GUARDS: ServiceDetail = {
         body: "Heavier-duty leaf protection for homes surrounded by oak, maple, or pine. Drastically cuts maintenance and prevents seasonal clogs.",
       },
       {
-        name: "Micro-Mesh Guards",
+        name: "Micro-Mesh Gutter Guards",
         body: "Fine stainless mesh screen that blocks almost everything — pine needles, shingle grit, and seed pods — while still letting water through.",
       },
       {
-        name: "Reverse-Curve Guards",
+        name: "Reverse-Curve Gutter Guards",
         body: "Surface-tension design that pulls water around a lip and into the gutter while leaves shed off the front. Self-cleans better on steep roofs.",
       },
     ],
   },
   process: {
-    heading: "How a guard install runs.",
+    heading: "How a gutter guard install runs.",
     steps: [
       {
         title: "Assessment and honest recommendation",
-        body: "We come look, then we tell you whether guards make sense or whether you'd be better off with twice-yearly cleanings.",
+        body: "We come look, then we tell you whether gutter guards make sense or whether you'd be better off with twice-yearly cleanings.",
       },
       {
         title: "Pick a system together",
@@ -722,11 +722,11 @@ const GUTTER_GUARDS: ServiceDetail = {
       },
       {
         title: "Pre-install clean",
-        body: "Every section of gutter cleared and flushed before guards go on.",
+        body: "Every section of gutter cleared and flushed before gutter guards go on.",
       },
       {
         title: "Install",
-        body: "Guards measured, cut to fit, and secured to the gutter. Most homes are a one-day job.",
+        body: "Gutter guard is measured, cut to fit, and secured to the gutter. Most homes are a one-day job.",
       },
       {
         title: "Walk-through and care notes",
@@ -736,7 +736,7 @@ const GUTTER_GUARDS: ServiceDetail = {
   },
   photos: [],
   pricing: {
-    headline: "What guards actually cost.",
+    headline: "What gutter guards actually cost.",
     body: [
       "Honest range: $7 to $15 per linear foot installed, depending on system and roof access. So a typical 150-foot home runs $1,050 to $2,250 for guards alone, or roughly $1,400 to $2,800 if you're bundling with new gutters.",
       "The big-name companies (you know the ones from TV) will quote $3,500 to $6,000 for the same job. The systems aren't four times better — the marketing budget is.",
@@ -751,33 +751,33 @@ const GUTTER_GUARDS: ServiceDetail = {
   serviceArea: {
     heading: "Guard installs across Hamilton County.",
     body: [
-      "We install guards everywhere we install gutters. Heavy-tree neighborhoods — Lookout Mountain, parts of Signal Mountain, North Chattanooga — are where guards make the most sense.",
+      "We install gutter guards everywhere we install gutters. Heavy-tree neighborhoods — Lookout Mountain, parts of Signal Mountain, North Chattanooga — are where guards make the most sense.",
     ],
   },
   faq: [
     {
       q: "Are gutter guards (like LeafFilter) worth it?",
-      a: "Honest answer: it depends on your trees and your budget. Good guards reduce cleaning frequency but they don't eliminate it — pine needles, shingle grit, and roof tar still build up on top. For most homes, two cleanings a year is cheaper than a $3,000+ guard install. We're happy to install them if you want them, but we won't push them on you.",
+      a: "Honest answer: it depends on your trees and your budget. Good gutter guards reduce cleaning frequency but they don't eliminate it — pine needles, shingle grit, and roof tar still build up on top. For most homes, two cleanings a year is cheaper than a $3,000+ guard install. We're happy to install them if you want them, but we won't push them on you.",
     },
     {
       q: "What's the difference between micro-mesh and reverse-curve?",
       a: "Micro-mesh has a fine stainless steel screen that blocks almost everything but lets water through. Reverse-curve uses surface tension — water curves around a lip and into the gutter while leaves shed off the front. Micro-mesh blocks more debris; reverse-curve self-cleans better on steep roofs.",
     },
     {
-      q: "Do guards void my roof warranty?",
-      a: "Ours don't, because we don't touch the roofing. We attach guards to the gutter, never under the shingles. If a guard company is lifting shingles to install, that can void the roof warranty — ask before you sign.",
+      q: "Do gutter guards void my roof warranty?",
+      a: "Ours don't, because we don't touch the roofing. We attach gutter guards to the gutter, never under the shingles. If a guard company is lifting shingles to install, that can void the roof warranty — ask before you sign.",
     },
     {
       q: "Will I really never have to clean my gutters again?",
-      a: "No, and don't believe anyone who says so. Guards reduce cleaning dramatically — usually from two or three visits a year to one — but the tops of the guards still collect debris and need a periodic brush-off. We're honest about this on every quote.",
+      a: "No, and don't believe anyone who says so. Gutter guards reduce cleaning dramatically — usually from two or three visits a year to one — but the tops of the gutter guards still collect debris and need a periodic brush-off. We're honest about this on every quote.",
     },
   ],
   related: ["installation", "cleaning", "gutter-repair"],
   seo: {
     metaTitle:
-      "Gutter Guards in Chattanooga, TN | Honest Advice | Gutter-It LLC",
+      "Gutter Guards in Chattanooga, TN | Great Price | Gutter-It LLC",
     metaDescription:
-      "Gutter guard installation in Chattanooga, TN. Micro-mesh and reverse-curve options. Straight talk on when guards make sense and when they don't.",
+      "Gutter guard installation in Chattanooga, TN. Micro-mesh and reverse-curve options. Straight talk on when gutter guards make sense.",
   },
 };
 
@@ -792,14 +792,14 @@ const PRESSURE_WASHING: ServiceDetail = {
     imageAlt: "Pressure washing a Chattanooga driveway",
   },
   intro: {
-    heading: "Because we're already on the ladder.",
+    heading: "Why Pressure Washing for Gutter-It.",
     body: [
       "Pressure washing started as an add-on to our gutter work — homeowners would ask if we could knock the tiger stripes off the gutter exterior while we were up there. It grew from there.",
-      "Today we run a full exterior wash service: driveways, sidewalks, house siding, decks, patios, and (still) gutter exteriors. Same approach as the gutter work — straight quotes, real work, no chemicals you wouldn't want in your kid's sandbox.",
+      "Today we run a full exterior pressure washing service: driveways, sidewalks, house siding, decks, patios, and (still) gutter exteriors. Same approach as the gutter work — straight quotes, real work, no chemicals you wouldn't want in your kid's sandbox.",
     ],
   },
   signs: {
-    heading: "Common things we wash.",
+    heading: "Common things we pressure wash.",
     items: [
       {
         title: "Tiger-striped gutter exteriors",
@@ -820,7 +820,7 @@ const PRESSURE_WASHING: ServiceDetail = {
     ],
   },
   whatsIncluded: {
-    heading: "What a wash visit covers.",
+    heading: "What a pressure washing visit covers.",
     items: [
       {
         title: "Pre-wash inspection",
@@ -836,12 +836,12 @@ const PRESSURE_WASHING: ServiceDetail = {
       },
       {
         title: "Plant and landscaping protection",
-        body: "We pre-rinse shrubs and beds adjacent to the wash zone so detergent doesn't sit on roots.",
+        body: "We pre-rinse shrubs and beds adjacent to the pressure washing zone so detergent doesn't sit on roots.",
       },
     ],
   },
   alsoIncludes: {
-    heading: "Other surfaces we wash.",
+    heading: "Other surfaces we pressure wash.",
     intro:
       "Pressure washing means different things on different surfaces. We match pressure, tip, and detergent to what we're cleaning — so siding doesn't get blasted and concrete actually comes clean.",
     items: [
@@ -880,7 +880,7 @@ const PRESSURE_WASHING: ServiceDetail = {
     ],
   },
   process: {
-    heading: "How a wash visit runs.",
+    heading: "How a pressure washing visit runs.",
     steps: [
       {
         title: "Walk the surfaces with you",
@@ -913,7 +913,7 @@ const PRESSURE_WASHING: ServiceDetail = {
     },
   ],
   pricing: {
-    headline: "What washing costs.",
+    headline: "What pressure washing costs.",
     body: [
       "Pressure washing is quoted by surface and square footage, not by the hour. Most single-family driveways run $150–$300. Full house exterior soft-wash runs $300–$600 depending on size and stories.",
       "If you're bundling — gutter exterior plus driveway, or full house plus deck — we discount the combined visit.",
@@ -929,7 +929,7 @@ const PRESSURE_WASHING: ServiceDetail = {
     heading: "Pressure washing across Hamilton County.",
     body: [
       "Same service area as our gutter work — Chattanooga, Hixson, East Brainerd, Ooltewah, Signal Mountain, Lookout Mountain, Soddy-Daisy, Red Bank, East Ridge, and Collegedale.",
-      "Spring and early summer are our busiest months for washing. Get on the schedule by April for the prime window.",
+      "Spring and early summer are our busiest months for pressure washing. Get on the schedule by April for the prime window.",
     ],
   },
   faq: [

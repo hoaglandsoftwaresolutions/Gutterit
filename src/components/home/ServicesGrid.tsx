@@ -15,9 +15,9 @@ export function ServicesGrid() {
   return (
     <section className="bg-cream">
       <div className="container py-16 md:py-20">
-        <p className="eyebrow">What we do</p>
+        <p className="eyebrow">Top Services</p>
         <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
-          Five things. We do them well.
+          Top 5 services in Hamilton County, TN.
         </h2>
         <p className="mt-4 max-w-2xl text-base text-navy/70">
           We don't pretend to be roofers, painters, or handymen. Gutters and

@@ -4,6 +4,7 @@ import { TrustBar } from "../layout/TrustBar";
 import { ButtonAnchor, ButtonLink } from "../ui/Button";
 import { BUSINESS } from "../../data/business";
 import { AREAS } from "../../data/areas";
+import { SERVICES } from "../../data/services";
 import { Faq } from "../home/Faq";
 import { Testimonials } from "../home/Testimonials";
 import { CtaSection } from "../ui/CtaSection";
@@ -19,6 +20,9 @@ import { RelatedServices } from "./RelatedServices";
 type Props = { detail: ServiceDetail; path: string };
 
 export function ServiceDetailPage({ detail, path }: Props) {
+  const serviceName =
+    SERVICES.find((s) => s.slug === detail.slug)?.title ?? "this service";
+
   return (
     <>
       <PageSeoTags path={path} />
@@ -180,14 +184,14 @@ export function ServiceDetailPage({ detail, path }: Props) {
 
       <Testimonials
         heading="What neighbors said."
-        eyebrow="Word of mouth"
+        eyebrow="Testimony"
         subhead="A few of the homeowners we've helped recently."
         filterService={detail.slug}
       />
 
       {detail.faq.length > 0 && (
         <Faq
-          heading="Questions about gutter repair."
+          heading={`Questions about ${serviceName.toLowerCase()}.`}
           intro="If your question isn't here, call. We'd rather talk it through."
           items={detail.faq}
         />
