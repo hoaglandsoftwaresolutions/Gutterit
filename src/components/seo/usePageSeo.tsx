@@ -22,7 +22,7 @@ export function PageSeoTags({ path }: { path: string }) {
   const canonical =
     data.path === "/"
       ? `${SITE_ORIGIN}/`
-      : `${SITE_ORIGIN}${data.path.endsWith("/") ? data.path : data.path + "/"}`;
+      : `${SITE_ORIGIN}${data.path.replace(/\/+$/, "")}`;
 
   return (
     <Seo

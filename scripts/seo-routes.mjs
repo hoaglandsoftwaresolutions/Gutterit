@@ -2,7 +2,7 @@
 // import it without a TS toolchain. If you add a new service or static page,
 // update both this file and src/data/seo.ts.
 
-export const SITE_ORIGIN = "https://gutteritllc.com";
+export const SITE_ORIGIN = "https://www.gutteritllc.com";
 
 export const AREAS = [
   "Chattanooga",

@@ -24,7 +24,7 @@ function escapeHtml(s) {
 
 function fullUrl(path) {
   if (path === "/") return `${SITE_ORIGIN}/`;
-  return `${SITE_ORIGIN}${path.endsWith("/") ? path : path + "/"}`;
+  return `${SITE_ORIGIN}${path.replace(/\/+$/, "")}`;
 }
 
 const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/images/hero/hero-main.jpg`;

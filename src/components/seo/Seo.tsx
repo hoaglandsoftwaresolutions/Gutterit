@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { SITE_ORIGIN } from "../../data/seo";
 
 type Props = {
   title: string;
@@ -13,7 +14,7 @@ export function Seo({
   title,
   description,
   canonical,
-  ogImage = "https://gutteritllc.com/images/hero/hero-main.jpg",
+  ogImage = `${SITE_ORIGIN}/images/hero/hero-main.jpg`,
   jsonLd,
   noindex = false,
 }: Props) {

@@ -1,10 +1,52 @@
+# ---------------------------------------------------------------------------
+# Old Wix URLs → new equivalents (301 permanent).
+# Google still has the Wix index entries; these stop them from hard-404ing
+# and pass their ranking signal to the right new page. ORDER MATTERS — more
+# specific rules must come before wildcards, and all of this must come before
+# the SPA fallback at the bottom.
+# ---------------------------------------------------------------------------
+
+# Wix booking page → our contact/quote page.
+/book-online             /contact                       301
+
+# Wix service pages lived under /service-page/<slug>. Map the ones we can
+# resolve precisely, then catch the rest at the Services index.
+# (The pressure-washing entry carries Wix's original "wahsing" typo.)
+/service-page/pressure-wahsing    /services/pressure-washing    301
+/service-page/pressure-washing    /services/pressure-washing    301
+/service-page/gutter-installation /services/installation        301
+/service-page/gutter-cleaning     /services/cleaning            301
+/service-page/gutter-repair       /services/repair              301
+/service-page/gutter-guards       /services/gutter-guards       301
+/service-page/*                   /services                     301
+
+# Wix portfolio / gallery pages no longer exist — send to home.
+/portfolio-collections/*  /                             301
+/portfolio                /                             301
+/portfolio/*              /                             301
+/gallery                  /                             301
+/gallery/*                /                             301
+
 # Legacy per-city service URLs are gone — funnel any inbound SEO traffic
-# (or stale Google index entries) to the main Services page. These must
-# come BEFORE the SPA fallback below.
+# (or stale Google index entries) to the main Services page.
 /cleaning-in-*           /services    301
 /repair-in-*             /services    301
 /installation-in-*       /services    301
 /pressure-washing-in-*   /services    301
+
+# ---------------------------------------------------------------------------
+# Trailing-slash normalization. The canonical URLs have NO trailing slash
+# (except root), so 301 the slashed variants to the no-slash version. These
+# must come before the SPA fallback so the slashed path doesn't get a 200.
+# ---------------------------------------------------------------------------
+/services/                       /services                     301
+/services/installation/          /services/installation        301
+/services/cleaning/              /services/cleaning            301
+/services/repair/                /services/repair              301
+/services/gutter-guards/         /services/gutter-guards       301
+/services/pressure-washing/      /services/pressure-washing    301
+/about/                          /about                        301
+/contact/                        /contact                      301
 
 # Cloudflare Pages serves static files filesystem-first, so prerendered
 # routes like /services/index.html are served directly. This SPA fallback

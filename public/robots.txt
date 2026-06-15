@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gutteritllc.com/sitemap.xml
+Sitemap: https://www.gutteritllc.com/sitemap.xml

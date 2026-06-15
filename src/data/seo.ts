@@ -4,7 +4,7 @@ import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ } from "./faq";
 
-export const SITE_ORIGIN = "https://gutteritllc.com";
+export const SITE_ORIGIN = "https://www.gutteritllc.com";
 
 // Additional service names from the Google Business Profile listing that don't
 // map 1:1 to our top-level service slugs, but should still appear in the
