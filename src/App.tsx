@@ -12,6 +12,7 @@ import PressureWashing from "./pages/services/PressureWashing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FaqPage from "./pages/Faq";
+import GutterCleaningChattanooga from "./pages/GutterCleaningChattanooga";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -46,6 +47,10 @@ export default function App() {
           />
           <Route path="about" element={<About />} />
           <Route path="faq" element={<FaqPage />} />
+          <Route
+            path="gutter-cleaning-chattanooga"
+            element={<GutterCleaningChattanooga />}
+          />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>

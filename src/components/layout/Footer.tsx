@@ -53,6 +53,14 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link
+                to="/gutter-cleaning-chattanooga"
+                className="hover:text-white"
+              >
+                Gutter Cleaning in Chattanooga
+              </Link>
+            </li>
+            <li>
               <Link to="/services/gutter-repair" className="hover:text-white">
                 Gutter Repair
               </Link>

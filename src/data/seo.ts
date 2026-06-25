@@ -3,6 +3,7 @@ import { SERVICE_DETAILS, type ServiceDetail } from "./serviceDetails";
 import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ, FAQ_FULL } from "./faq";
+import { LOCAL_GUTTER_CLEANING_CHATTANOOGA } from "./localPages";
 
 export const SITE_ORIGIN = "https://www.gutteritllc.com";
 
@@ -123,6 +124,30 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
+  const gutterCleaningChattanooga: PageSeo = {
+    path: "/gutter-cleaning-chattanooga",
+    title:
+      "Gutter Cleaning in Chattanooga, TN | From $100 | Gutter-It LLC",
+    description:
+      "Local, family-owned gutter cleaning in Chattanooga, TN from $100. Every section cleared by hand, downspouts flushed, debris hauled away. Same-day callback, free quotes.",
+    ogImage: `${SITE_ORIGIN}/images/jobs/cleaning/leavesingutter.jpg`,
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Gutter Cleaning in Chattanooga", path: "/gutter-cleaning-chattanooga" },
+      ]),
+      localServiceSchema({
+        path: "/gutter-cleaning-chattanooga",
+        name: "Gutter Cleaning in Chattanooga, TN",
+        serviceType: "Gutter Cleaning",
+        description:
+          "Hand gutter cleaning for homes in Chattanooga and Hamilton County: every section cleared, downspouts flushed, debris hauled away. From $100.",
+        price: "100",
+      }),
+      faqPageSchema(LOCAL_GUTTER_CLEANING_CHATTANOOGA.faq),
+    ],
+  };
+
   const faq: PageSeo = {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
@@ -150,7 +175,15 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
-  return [home, services, ...servicePages, about, faq, contact];
+  return [
+    home,
+    services,
+    ...servicePages,
+    gutterCleaningChattanooga,
+    about,
+    faq,
+    contact,
+  ];
 }
 
 export function getAllRoutes(): PageSeo[] {
@@ -268,6 +301,42 @@ function serviceSchema(s: Service) {
           offers: {
             "@type": "Offer",
             price: s.slug === "cleaning" ? "100" : "50",
+            priceCurrency: "USD",
+          },
+        }
+      : {}),
+  };
+}
+
+// Schema for standalone local landing pages — a Service tied to the
+// LocalBusiness with explicit areaServed cities so search engines read it as a
+// location-targeted offering.
+function localServiceSchema(opts: {
+  path: string;
+  name: string;
+  serviceType: string;
+  description: string;
+  price?: string;
+}) {
+  const url = fullUrl(opts.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: opts.name,
+    serviceType: opts.serviceType,
+    url,
+    description: opts.description,
+    provider: { "@id": `${SITE_ORIGIN}/#business` },
+    areaServed: AREAS.map((c) => ({
+      "@type": "City",
+      name: `${c}, TN`,
+    })),
+    ...(opts.price
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: opts.price,
             priceCurrency: "USD",
           },
         }
