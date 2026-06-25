@@ -547,7 +547,7 @@ export function getAllRoutes() {
     title:
       "Gutter-It LLC | Gutter Cleaning, Installation & Repair in Chattanooga, TN",
     description:
-      "Family-owned gutter and pressure washing in Chattanooga, TN. Cleaning from $100, repair from $50, seamless installation, pressure washing. Licensed, insured, free quotes.",
+      "Family-owned gutter cleaning, repair, seamless installation, and pressure washing in Chattanooga, TN. Licensed, insured, free quotes. Cleaning from $100.",
     priority: 1.0,
     changefreq: "weekly",
     jsonLd: [localBusinessSchema(), faqPageSchema(), websiteSchema()],
@@ -588,7 +588,7 @@ export function getAllRoutes() {
     path: "/gutter-cleaning-chattanooga",
     title: "Gutter Cleaning in Chattanooga, TN | From $100 | Gutter-It LLC",
     description:
-      "Local, family-owned gutter cleaning in Chattanooga, TN from $100. Every section cleared by hand, downspouts flushed, debris hauled away. Same-day callback, free quotes.",
+      "Local, family-owned gutter cleaning in Chattanooga, TN from $100. Every section cleared by hand, downspouts flushed, debris hauled. Same-day callback.",
     ogImage: `${SITE_ORIGIN}/images/jobs/cleaning/leavesingutter.jpg`,
     priority: 0.9,
     changefreq: "monthly",
@@ -616,7 +616,7 @@ export function getAllRoutes() {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
     description:
-      "Answers to common gutter questions in Chattanooga — cleaning frequency and cost, repair vs. replacement, gutter guards, pressure washing, service area, and how to get a free quote.",
+      "Common gutter questions in Chattanooga: cleaning frequency and cost, repair vs. replacement, gutter guards, service area, and getting a free quote.",
     priority: 0.7,
     changefreq: "monthly",
     jsonLd: [
