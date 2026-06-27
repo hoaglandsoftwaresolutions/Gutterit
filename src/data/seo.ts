@@ -4,6 +4,8 @@ import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ, FAQ_FULL } from "./faq";
 import { LOCAL_GUTTER_CLEANING_CHATTANOOGA } from "./localPages";
+import { EXTRA_SERVICES, serviceUrl, locationUrl } from "./extraServices";
+import { LOCATIONS, type LocationContent } from "./locations";
 
 export const SITE_ORIGIN = "https://www.gutteritllc.com";
 
@@ -175,10 +177,76 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
+  // Silo hub display names + slugs, used for breadcrumb hierarchy on the
+  // extended service pages.
+  const SILO_HUB = {
+    gutters: { name: "Residential Gutter Services", slug: "residential-gutter-services" },
+    exterior: { name: "Exterior Cleaning", slug: "exterior-cleaning" },
+  } as const;
+
+  const extraServicePages: PageSeo[] = EXTRA_SERVICES.map((s) => {
+    const path = serviceUrl(s.slug, s.silo);
+    const hub = SILO_HUB[s.silo];
+    const isHub = s.slug === hub.slug;
+    const crumbs = isHub
+      ? [
+          { name: "Home", path: "/" },
+          { name: hub.name, path },
+        ]
+      : [
+          { name: "Home", path: "/" },
+          { name: hub.name, path: serviceUrl(hub.slug, s.silo) },
+          { name: s.title, path },
+        ];
+    return {
+      path,
+      title: s.seo.metaTitle,
+      description: s.seo.metaDescription,
+      ogImage: `${SITE_ORIGIN}${s.hero.image}`,
+      jsonLd: [
+        breadcrumbSchema(crumbs),
+        extraServiceSchema(s.slug, s.silo, s.title, s.seo.metaDescription),
+        ...(s.faq.length ? [faqPageSchema(s.faq)] : []),
+      ],
+    };
+  });
+
+  const locationsIndex: PageSeo = {
+    path: "/service-areas",
+    title: "Service Areas | Gutter-It LLC, Chattanooga TN",
+    description:
+      "Gutter cleaning, repair, installation, and pressure washing across the Chattanooga metro — Hixson, Red Bank, Soddy-Daisy, North Georgia, and beyond.",
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Service Areas", path: "/service-areas" },
+      ]),
+    ],
+  };
+
+  const locationPages: PageSeo[] = LOCATIONS.map((loc) => ({
+    path: locationUrl(loc.slug),
+    title: loc.seo.metaTitle,
+    description: loc.seo.metaDescription,
+    ogImage: `${SITE_ORIGIN}${loc.hero.image}`,
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Service Areas", path: "/service-areas" },
+        { name: `${loc.city}, ${loc.state}`, path: locationUrl(loc.slug) },
+      ]),
+      locationServiceSchema(loc),
+      ...(loc.faq.length ? [faqPageSchema(loc.faq)] : []),
+    ],
+  }));
+
   return [
     home,
     services,
     ...servicePages,
+    ...extraServicePages,
+    locationsIndex,
+    ...locationPages,
     gutterCleaningChattanooga,
     about,
     faq,
@@ -215,6 +283,13 @@ function localBusinessSchema() {
       "@type": "GeoCoordinates",
       latitude: 35.0456,
       longitude: -85.3097,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "2",
+      bestRating: "5",
+      worstRating: "1",
     },
     areaServed: AREAS.map((c) => `${c}, TN`),
     openingHoursSpecification: [
@@ -341,6 +416,58 @@ function localServiceSchema(opts: {
           },
         }
       : {}),
+  };
+}
+
+// Schema for a location landing page. A Service tied to the LocalBusiness,
+// areaServed scoped to that specific city (with correct state) plus the page's
+// own geo coordinates.
+function locationServiceSchema(loc: LocationContent) {
+  const url = `${SITE_ORIGIN}${locationUrl(loc.slug)}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: `Gutter Services in ${loc.city}, ${loc.state}`,
+    serviceType: "Gutter Cleaning, Repair & Installation",
+    url,
+    description: loc.seo.metaDescription,
+    provider: { "@id": `${SITE_ORIGIN}/#business` },
+    areaServed: {
+      "@type": "City",
+      name: `${loc.city}, ${loc.state}`,
+      ...(loc.geo
+        ? {
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: loc.geo.lat,
+              longitude: loc.geo.lng,
+            },
+          }
+        : {}),
+    },
+  };
+}
+
+// Schema for the extended (Core-30) service pages. A Service tied to the
+// LocalBusiness with the full areaServed list.
+function extraServiceSchema(
+  slug: string,
+  silo: "gutters" | "exterior",
+  name: string,
+  description: string,
+) {
+  const url = `${SITE_ORIGIN}${serviceUrl(slug, silo)}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    serviceType: name,
+    name,
+    url,
+    provider: { "@id": `${SITE_ORIGIN}/#business` },
+    areaServed: AREAS.map((c) => `${c}, TN`),
+    description,
   };
 }
 

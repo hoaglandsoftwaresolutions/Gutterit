@@ -36,20 +36,45 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-cream">
-            Services
+            Gutter Services
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link
-                to="/services/installation"
-                className="hover:text-white"
+                to="/residential-gutter-services"
+                className="font-semibold hover:text-white"
               >
-                Gutter Installation
+                Residential Gutter Services
               </Link>
             </li>
             <li>
               <Link to="/services/cleaning" className="hover:text-white">
                 Gutter Cleaning
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/gutter-repair" className="hover:text-white">
+                Gutter Repair
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/installation" className="hover:text-white">
+                Seamless Installation
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/gutter-guards" className="hover:text-white">
+                Gutter Guards
+              </Link>
+            </li>
+            <li>
+              <Link to="/residential-gutter-services/downspout-services" className="hover:text-white">
+                Downspout Services
+              </Link>
+            </li>
+            <li>
+              <Link to="/residential-gutter-services/drainage-solutions" className="hover:text-white">
+                Drainage Solutions
               </Link>
             </li>
             <li>
@@ -60,25 +85,43 @@ export function Footer() {
                 Gutter Cleaning in Chattanooga
               </Link>
             </li>
+          </ul>
+
+          <h4 className="mt-8 text-xs font-semibold uppercase tracking-wider text-cream">
+            Exterior Cleaning
+          </h4>
+          <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link to="/services/gutter-repair" className="hover:text-white">
-                Gutter Repair
+              <Link
+                to="/exterior-cleaning"
+                className="font-semibold hover:text-white"
+              >
+                Exterior Cleaning
               </Link>
             </li>
             <li>
-              <Link
-                to="/services/gutter-guards"
-                className="hover:text-white"
-              >
-                Gutter Guards
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services/pressure-washing"
-                className="hover:text-white"
-              >
+              <Link to="/services/pressure-washing" className="hover:text-white">
                 Pressure Washing
+              </Link>
+            </li>
+            <li>
+              <Link to="/exterior-cleaning/house-washing" className="hover:text-white">
+                House &amp; Soft Washing
+              </Link>
+            </li>
+            <li>
+              <Link to="/exterior-cleaning/roof-cleaning" className="hover:text-white">
+                Roof Cleaning
+              </Link>
+            </li>
+            <li>
+              <Link to="/exterior-cleaning/driveway-cleaning" className="hover:text-white">
+                Driveway &amp; Concrete
+              </Link>
+            </li>
+            <li>
+              <Link to="/exterior-cleaning/deck-fence-cleaning" className="hover:text-white">
+                Deck &amp; Fence Cleaning
               </Link>
             </li>
           </ul>
@@ -137,6 +180,11 @@ export function Footer() {
             <li>
               <Link to="/services" className="hover:text-white">
                 Services & Pricing
+              </Link>
+            </li>
+            <li>
+              <Link to="/service-areas" className="hover:text-white">
+                Service Areas
               </Link>
             </li>
             <li>

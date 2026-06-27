@@ -253,7 +253,7 @@ const INSTALLATION: ServiceDetail = {
   related: ["cleaning", "gutter-guards", "gutter-repair"],
   seo: {
     metaTitle:
-      "Gutter Installation in Chattanooga, TN | Seamless Aluminum | Gutter-It LLC",
+      "Seamless Gutter Installation in Chattanooga, TN | Gutter-It",
     metaDescription:
       "Seamless aluminum gutter installation in Chattanooga, TN. Formed on your driveway, hidden hangers, written 5-year warranty. Free on-site quote.",
   },
@@ -775,7 +775,7 @@ const GUTTER_GUARDS: ServiceDetail = {
   related: ["installation", "cleaning", "gutter-repair"],
   seo: {
     metaTitle:
-      "Gutter Guards in Chattanooga, TN | Great Price | Gutter-It LLC",
+      "Gutter Guards in Chattanooga, TN | Gutter-It LLC",
     metaDescription:
       "Gutter guard installation in Chattanooga, TN. Micro-mesh and reverse-curve options. Straight talk on when gutter guards make sense.",
   },
@@ -953,7 +953,7 @@ const PRESSURE_WASHING: ServiceDetail = {
   related: ["cleaning", "gutter-guards", "gutter-repair"],
   seo: {
     metaTitle:
-      "Pressure Washing in Chattanooga, TN | Gutters, Driveways, Siding | Gutter-It LLC",
+      "Pressure Washing in Chattanooga, TN | Gutter-It LLC",
     metaDescription:
       "Pressure washing in Chattanooga: gutter exteriors, driveways, sidewalks, and siding. Cleaned without damage. Free quote, locally owned.",
   },

@@ -53,6 +53,35 @@
 /about/                          /about                        301
 /contact/                        /contact                      301
 
+# ---------------------------------------------------------------------------
+# Silo restructure (2026-06) — the extended Core-30 service pages moved off
+# flat /services/<slug> into two top-level silo hubs. These slugs were never
+# indexed, so these 301s are low-cost insurance, not load-bearing. The five
+# CORE service pages stay at /services/<slug> and are intentionally NOT listed
+# here — do NOT add a /services/* wildcard or it would catch them.
+# ---------------------------------------------------------------------------
+# Gutters silo — children
+/services/gutter-replacement   /residential-gutter-services/gutter-replacement   301
+/services/downspout-services   /residential-gutter-services/downspout-services   301
+/services/gutter-leak-repair   /residential-gutter-services/gutter-leak-repair   301
+/services/gutter-realignment   /residential-gutter-services/gutter-realignment   301
+/services/gutter-inspection    /residential-gutter-services/gutter-inspection    301
+/services/fascia-repair        /residential-gutter-services/fascia-repair        301
+/services/soffit-repair        /residential-gutter-services/soffit-repair        301
+/services/roof-debris-removal  /residential-gutter-services/roof-debris-removal  301
+/services/drainage-solutions   /residential-gutter-services/drainage-solutions   301
+# Gutters silo — hub root
+/services/residential-gutter-services   /residential-gutter-services             301
+# Exterior silo — children
+/services/house-washing        /exterior-cleaning/house-washing       301
+/services/roof-cleaning        /exterior-cleaning/roof-cleaning        301
+/services/driveway-cleaning    /exterior-cleaning/driveway-cleaning    301
+/services/deck-fence-cleaning  /exterior-cleaning/deck-fence-cleaning  301
+
+# /locations renamed to /service-areas (pages were unindexed; courtesy 301).
+/locations            /service-areas         301
+/locations/*          /service-areas/:splat  301
+
 # Cloudflare Pages serves static files filesystem-first, so prerendered
 # routes like /services/index.html are served directly. This SPA fallback
 # only fires for paths with no matching static file.

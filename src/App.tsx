@@ -13,6 +13,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FaqPage from "./pages/Faq";
 import GutterCleaningChattanooga from "./pages/GutterCleaningChattanooga";
+import ExtraService from "./pages/services/ExtraService";
+import LocationsIndex from "./pages/locations/LocationsIndex";
+import Location from "./pages/locations/Location";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -45,6 +48,24 @@ export default function App() {
             path="services/pressure-washing"
             element={<PressureWashing />}
           />
+          {/* Extended (Core-30) service pages live in two top-level silos, each
+              with a hub at the silo root and child services nested under it.
+              Both render through ExtraService, which resolves the silo + slug. */}
+          <Route
+            path="residential-gutter-services"
+            element={<ExtraService />}
+          />
+          <Route
+            path="residential-gutter-services/:childSlug"
+            element={<ExtraService />}
+          />
+          <Route path="exterior-cleaning" element={<ExtraService />} />
+          <Route
+            path="exterior-cleaning/:childSlug"
+            element={<ExtraService />}
+          />
+          <Route path="service-areas" element={<LocationsIndex />} />
+          <Route path="service-areas/:citySlug" element={<Location />} />
           <Route path="about" element={<About />} />
           <Route path="faq" element={<FaqPage />} />
           <Route

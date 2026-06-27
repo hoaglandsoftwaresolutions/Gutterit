@@ -7,6 +7,7 @@ import { ButtonLink } from "../ui/Button";
 import { cn } from "../../lib/utils";
 
 const NAV_AFTER_SERVICES = [
+  { to: "/service-areas", label: "Service Areas" },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
@@ -41,7 +42,10 @@ export function Header() {
     };
   }, [servicesOpen]);
 
-  const onServicesRoute = location.pathname.startsWith("/services");
+  const onServicesRoute =
+    location.pathname.startsWith("/services") ||
+    location.pathname.startsWith("/residential-gutter-services") ||
+    location.pathname.startsWith("/exterior-cleaning");
 
   return (
     <header className="sticky top-0 z-40 border-b border-navy/5 bg-cream/95 backdrop-blur">
@@ -100,6 +104,20 @@ export function Header() {
                 >
                   Services Overview
                 </Link>
+                <NavLink
+                  to="/residential-gutter-services"
+                  role="menuitem"
+                  className={({ isActive }) =>
+                    cn(
+                      "block border-b border-navy/5 px-4 py-3 text-sm hover:bg-cream",
+                      isActive
+                        ? "font-semibold text-amber"
+                        : "font-medium text-navy/90",
+                    )
+                  }
+                >
+                  Residential Gutter Services
+                </NavLink>
                 <ul>
                   {SERVICES.map((s) => (
                     <li key={s.slug}>
@@ -178,6 +196,17 @@ export function Header() {
               Services
             </NavLink>
             <div className="flex flex-col border-l-2 border-navy/10 pl-4">
+              <NavLink
+                to="/residential-gutter-services"
+                className={({ isActive }) =>
+                  cn(
+                    "py-2.5 text-sm",
+                    isActive ? "font-semibold text-amber" : "text-navy/80",
+                  )
+                }
+              >
+                Residential Gutter Services
+              </NavLink>
               {SERVICES.map((s) => (
                 <NavLink
                   key={s.slug}

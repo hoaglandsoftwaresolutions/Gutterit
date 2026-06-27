@@ -4,25 +4,26 @@ import { TrustBar } from "../layout/TrustBar";
 import { ButtonAnchor, ButtonLink } from "../ui/Button";
 import { BUSINESS } from "../../data/business";
 import { AREAS } from "../../data/areas";
-import { SERVICES } from "../../data/services";
 import { Faq } from "../home/Faq";
 import { Testimonials } from "../home/Testimonials";
 import { CtaSection } from "../ui/CtaSection";
-import type { ServiceDetail } from "../../data/serviceDetails";
+import { serviceUrl, type ExtraServiceDetail } from "../../data/extraServices";
 import { SignsList } from "./SignsList";
 import { IncludedList } from "./IncludedList";
-import { AlsoIncludes } from "./AlsoIncludes";
 import { ProcessList } from "./ProcessList";
 import { PhotoStrip } from "./PhotoStrip";
 import { PricingBlock } from "./PricingBlock";
-import { RelatedServices } from "./RelatedServices";
+import { RelatedLinks } from "./RelatedLinks";
 import { ServiceAreasStrip } from "./ServiceAreasStrip";
 
-type Props = { detail: ServiceDetail; path: string };
+type Props = { detail: ExtraServiceDetail };
 
-export function ServiceDetailPage({ detail, path }: Props) {
-  const serviceName =
-    SERVICES.find((s) => s.slug === detail.slug)?.title ?? "this service";
+// Renderer for the extended (Core-30) service pages. Reuses the exact same
+// section components as ServiceDetailPage so the pages are visually identical;
+// the only differences are the typed-vs-string slug and the arbitrary related
+// links (RelatedLinks instead of RelatedServices).
+export function ExtraServiceDetailPage({ detail }: Props) {
+  const path = serviceUrl(detail.slug, detail.silo);
 
   return (
     <>
@@ -76,22 +77,6 @@ export function ServiceDetailPage({ detail, path }: Props) {
               <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
                 {detail.intro.heading}
               </h2>
-              {detail.intro.image && (
-                <figure className="mt-6 overflow-hidden rounded-xl border border-navy/10 bg-cream shadow-card">
-                  <img
-                    src={detail.intro.image.src}
-                    alt={detail.intro.image.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-auto w-full object-cover"
-                  />
-                  {detail.intro.image.caption && (
-                    <figcaption className="px-5 py-4 text-sm leading-relaxed text-navy/70">
-                      {detail.intro.image.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              )}
             </div>
             <div className="space-y-5 text-base leading-relaxed text-navy/80">
               {detail.intro.body.map((para, i) => (
@@ -109,38 +94,10 @@ export function ServiceDetailPage({ detail, path }: Props) {
         items={detail.whatsIncluded.items}
       />
 
-      {detail.alsoIncludes && (
-        <AlsoIncludes
-          heading={detail.alsoIncludes.heading}
-          intro={detail.alsoIncludes.intro}
-          items={detail.alsoIncludes.items}
-        />
-      )}
-
       <ProcessList
         heading={detail.process.heading}
         steps={detail.process.steps}
       />
-
-      {detail.materials && (
-        <section className="bg-white">
-          <div className="container py-16 md:py-20">
-            <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-              <div>
-                <p className="eyebrow">Materials & options</p>
-                <h2 className="mt-2 font-display text-3xl font-bold text-navy md:text-4xl">
-                  {detail.materials.heading}
-                </h2>
-              </div>
-              <div className="space-y-5 text-base leading-relaxed text-navy/80">
-                {detail.materials.body.map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       <PhotoStrip
         photos={detail.photos}
@@ -183,24 +140,24 @@ export function ServiceDetailPage({ detail, path }: Props) {
         </div>
       </section>
 
-      <ServiceAreasStrip serviceName={serviceName} />
+      <ServiceAreasStrip serviceName={detail.title} />
 
       <Testimonials
         heading="What neighbors said."
         eyebrow="Testimony"
         subhead="A few of the homeowners we've helped recently."
-        filterService={detail.slug}
+        filterService={detail.testimonialFilter}
       />
 
       {detail.faq.length > 0 && (
         <Faq
-          heading={`Questions about ${serviceName.toLowerCase()}.`}
+          heading={`Questions about ${detail.title.toLowerCase()}.`}
           intro="If your question isn't here, call. We'd rather talk it through."
           items={detail.faq}
         />
       )}
 
-      <RelatedServices related={detail.related} />
+      <RelatedLinks related={detail.related} />
 
       <CtaSection
         eyebrow="Ready when you are"
