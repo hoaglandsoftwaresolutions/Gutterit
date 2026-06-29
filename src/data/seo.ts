@@ -284,13 +284,10 @@ function localBusinessSchema() {
       latitude: 35.0456,
       longitude: -85.3097,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "2",
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // NOTE: no aggregateRating here. A self-serving rating on the business
+    // entity (without genuine Review nodes visible on-page) violates Google's
+    // structured-data review policy and gets flagged invalid in Search Console.
+    // Reviews live on the Google Business Profile instead.
     areaServed: AREAS.map((c) => `${c}, TN`),
     openingHoursSpecification: [
       {
