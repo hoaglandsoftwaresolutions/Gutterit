@@ -85,6 +85,14 @@ export function Footer() {
                 Gutter Cleaning in Chattanooga
               </Link>
             </li>
+            <li>
+              <Link
+                to="/gutter-cleaning-east-brainerd"
+                className="hover:text-white"
+              >
+                Gutter Cleaning in East Brainerd
+              </Link>
+            </li>
           </ul>
 
           <h4 className="mt-8 text-xs font-semibold uppercase tracking-wider text-cream">

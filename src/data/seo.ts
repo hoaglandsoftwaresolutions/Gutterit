@@ -3,7 +3,10 @@ import { SERVICE_DETAILS, type ServiceDetail } from "./serviceDetails";
 import { AREAS } from "./areas";
 import { BUSINESS } from "./business";
 import { FAQ, FAQ_FULL } from "./faq";
-import { LOCAL_GUTTER_CLEANING_CHATTANOOGA } from "./localPages";
+import {
+  LOCAL_GUTTER_CLEANING_CHATTANOOGA,
+  LOCAL_GUTTER_CLEANING_EAST_BRAINERD,
+} from "./localPages";
 import { EXTRA_SERVICES, serviceUrl, locationUrl } from "./extraServices";
 import { LOCATIONS, type LocationContent } from "./locations";
 
@@ -150,6 +153,32 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
+  const gutterCleaningEastBrainerd: PageSeo = {
+    path: "/gutter-cleaning-east-brainerd",
+    title: "Gutter Cleaning in East Brainerd, TN | From $100 | Gutter-It LLC",
+    description:
+      "Local, family-owned gutter cleaning in East Brainerd, TN from $100. Every section cleared by hand, downspouts flushed, debris hauled. Same-day callback.",
+    ogImage: `${SITE_ORIGIN}/images/jobs/cleaning/leavesingutter.jpg`,
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        {
+          name: "Gutter Cleaning in East Brainerd",
+          path: "/gutter-cleaning-east-brainerd",
+        },
+      ]),
+      localServiceSchema({
+        path: "/gutter-cleaning-east-brainerd",
+        name: "Gutter Cleaning in East Brainerd, TN",
+        serviceType: "Gutter Cleaning",
+        description:
+          "Hand gutter cleaning for homes in East Brainerd and southeast Chattanooga: every section cleared, downspouts flushed, debris hauled away. From $100.",
+        price: "100",
+      }),
+      faqPageSchema(LOCAL_GUTTER_CLEANING_EAST_BRAINERD.faq),
+    ],
+  };
+
   const faq: PageSeo = {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
@@ -248,6 +277,7 @@ export function getStaticRoutes(): PageSeo[] {
     locationsIndex,
     ...locationPages,
     gutterCleaningChattanooga,
+    gutterCleaningEastBrainerd,
     about,
     faq,
     contact,

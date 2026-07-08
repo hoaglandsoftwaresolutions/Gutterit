@@ -169,7 +169,7 @@ const REL = {
   },
   fascia: {
     to: serviceUrl("fascia-repair", "gutters"),
-    title: "Fascia Repair",
+    title: "Fascia Board Repair",
     blurb: "Replace rotted, water-damaged fascia board behind the gutter.",
   },
   soffit: {
@@ -1125,11 +1125,11 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
   {
     slug: "fascia-repair",
     silo: "gutters",
-    title: "Fascia Repair",
+    title: "Fascia Board Repair",
     testimonialFilter: "installation",
     hero: {
       eyebrow: "Chattanooga · Hamilton County",
-      h1: "Fascia repair for the rot that overflowing gutters cause.",
+      h1: "Fascia Board Repair Services Near Chattanooga, Tennessee - Protecting your home's roofline.",
       lede: "The fascia board is what your gutters hang on. When gutters overflow for years, that board rots — and new gutters won't hold on rotted wood. We replace the damaged fascia and fix the gutter problem that caused it.",
       image: IMG.repairFascia,
       imageAlt: "Replacing rotted fascia board behind a gutter on a Chattanooga home",
@@ -1139,7 +1139,7 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
       body: [
         "Fascia is the horizontal board running along the edge of the roof, right behind the gutter. It's what the gutter hangers screw into, and it's the last line of defense before water reaches the roof structure. In Chattanooga's wet climate, fascia takes a beating — and overflowing gutters are the number-one cause of fascia rot.",
         "When a gutter clogs and overflows month after month, water runs down behind it and soaks the fascia board. The paint blisters, the wood softens, and eventually it rots through. Once that happens, the gutter has nothing solid to hang on, and you get sagging runs, more overflow, and a cycle that feeds itself.",
-        "We replace the rotted fascia with new material, prime and paint it to match, and re-hang the gutter properly — and we fix whatever was causing the overflow so it doesn't rot again. Fascia repair and gutter work go together, which is why doing them with one crew makes sense.",
+        "We replace the rotted fascia board with new material, prime and paint it to match, and re-hang the gutter properly — and we fix whatever was causing the overflow so it doesn't rot again. Fascia board repair and gutter work go together, which is why doing them with one crew makes sense.",
       ],
     },
     signs: {
@@ -1172,7 +1172,7 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
       ],
     },
     whatsIncluded: {
-      heading: "What fascia repair includes.",
+      heading: "What fascia board repair includes.",
       items: [
         {
           title: "Removing the gutter and damaged board",
@@ -1197,7 +1197,7 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
       ],
     },
     process: {
-      heading: "How a fascia repair runs.",
+      heading: "How a fascia board repair runs.",
       steps: [
         {
           title: "Inspect and quote",
@@ -1225,9 +1225,9 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
       { src: IMG.repairFascia, alt: "New fascia board installed behind a gutter on a Chattanooga home" },
     ],
     pricing: {
-      headline: "What fascia repair costs in Chattanooga.",
+      headline: "What fascia board repair costs in Chattanooga.",
       body: [
-        "Fascia repair is priced by the linear footage of board that needs replacing and the height/access of the work. A single damaged section runs $150–$400; longer runs or two-story access cost more.",
+        "Fascia board repair is priced by the linear footage of board that needs replacing and the height/access of the work. A single damaged section runs $150–$400; longer runs or two-story access cost more.",
         "We quote it on-site after we see how far the rot extends. If the damage spread to the rafter tails behind the fascia, that's flagged and quoted separately before we proceed.",
       ],
       bullets: [
@@ -1238,7 +1238,7 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
       ],
     },
     serviceArea: {
-      heading: "Fascia repair across Hamilton County.",
+      heading: "Fascia board repair across Hamilton County.",
       body: [
         "We repair fascia throughout Chattanooga, Hixson, Red Bank, Soddy-Daisy, and the rest of Hamilton County — usually as part of a gutter repair or replacement where the overflow already did its damage.",
         "Older homes in established neighborhoods see the most fascia rot, since the gutters above have had decades to overflow.",
@@ -1264,9 +1264,9 @@ export const EXTRA_SERVICES: ExtraServiceDetail[] = [
     ],
     related: [REL.soffit, REL.repair, REL.replacement, REL.hub],
     seo: {
-      metaTitle: "Fascia Repair in Chattanooga, TN | Gutter-It",
+      metaTitle: "Fascia Board Repair in Chattanooga, TN | Gutter-It",
       metaDescription:
-        "Fascia repair in Chattanooga, TN. Replace rotted, water-damaged fascia board behind your gutters and fix the overflow that caused it. Free on-site quote.",
+        "Fascia board repair in Chattanooga, TN. Replace rotted, water-damaged fascia board behind your gutters and fix the overflow that caused it. Free on-site quote.",
     },
   },
 

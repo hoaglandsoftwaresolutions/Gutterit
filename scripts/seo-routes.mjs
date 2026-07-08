@@ -224,6 +224,35 @@ export const FAQ_GUTTER_CLEANING_CHATTANOOGA = [
   },
 ];
 
+// FAQ for the /gutter-cleaning-east-brainerd local landing page. Keep in sync
+// with LOCAL_GUTTER_CLEANING_EAST_BRAINERD.faq in src/data/localPages.ts.
+export const FAQ_GUTTER_CLEANING_EAST_BRAINERD = [
+  {
+    q: "How often should I clean my gutters in East Brainerd?",
+    a: "Twice a year for most East Brainerd homes with mature trees — once in late spring after the oaks and sweetgums drop pollen and seed pods, and again in late fall after the leaves come down. Newer homes with less tree cover can sometimes stretch to once a year.",
+  },
+  {
+    q: "How much does gutter cleaning cost in East Brainerd?",
+    a: "Most single-story East Brainerd homes run $100–$175, and two-story homes $150–$250 depending on roof line and accessibility. We give a firm number on-site before we start — no surprise add-ons.",
+  },
+  {
+    q: "My newer East Brainerd home's gutters overflow even when clean — why?",
+    a: "A lot of newer construction in East Brainerd went up with undersized builder-grade gutters and too few downspouts, so they overflow even debris-free. We'll tell you honestly on-site whether it's a cleaning issue or a system that needs re-pitching, added downspouts, or upsizing.",
+  },
+  {
+    q: "Do I need to be home for the cleaning?",
+    a: "No. We work outside the house. Just let us know about side gates or pets when you book. You can pay by card after we send the invoice.",
+  },
+  {
+    q: "What if my downspouts are clogged underground?",
+    a: "If we hose a downspout and water doesn't come out the bottom, there's a blockage below the ground line. We'll show you, explain it, and quote the fix separately — most underground clogs clear with a longer snake on a follow-up.",
+  },
+  {
+    q: "How fast can you come out to East Brainerd?",
+    a: "Same-day callback when you reach out, with most on-site quotes within 2–4 business days. Active leaks and storm damage jump the line — call us directly if it's actively making your house wet.",
+  },
+];
+
 function fullUrl(path) {
   if (path === "/") return `${SITE_ORIGIN}/`;
   return `${SITE_ORIGIN}${path.replace(/\/+$/, "")}`;
@@ -818,11 +847,11 @@ export const EXTRA_SERVICES_META = [
   },
   {
     slug: "fascia-repair",
-    title: "Fascia Repair in Chattanooga, TN | Gutter-It",
+    title: "Fascia Board Repair in Chattanooga, TN | Gutter-It",
     description:
-      "Fascia repair in Chattanooga, TN. Replace rotted, water-damaged fascia board behind your gutters and fix the overflow that caused it. Free on-site quote.",
+      "Fascia board repair in Chattanooga, TN. Replace rotted, water-damaged fascia board behind your gutters and fix the overflow that caused it. Free on-site quote.",
     image: "/images/jobs/repair/damaged-gutter-fascia-v3.jpg",
-    name: "Fascia Repair",
+    name: "Fascia Board Repair",
     faq: [
       {
         q: "What causes fascia to rot?",
@@ -1384,6 +1413,34 @@ export function getAllRoutes() {
     ],
   };
 
+  const gutterCleaningEastBrainerd = {
+    path: "/gutter-cleaning-east-brainerd",
+    title: "Gutter Cleaning in East Brainerd, TN | From $100 | Gutter-It LLC",
+    description:
+      "Local, family-owned gutter cleaning in East Brainerd, TN from $100. Every section cleared by hand, downspouts flushed, debris hauled. Same-day callback.",
+    ogImage: `${SITE_ORIGIN}/images/jobs/cleaning/leavesingutter.jpg`,
+    priority: 0.9,
+    changefreq: "monthly",
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        {
+          name: "Gutter Cleaning in East Brainerd",
+          path: "/gutter-cleaning-east-brainerd",
+        },
+      ]),
+      localServiceSchema({
+        path: "/gutter-cleaning-east-brainerd",
+        name: "Gutter Cleaning in East Brainerd, TN",
+        serviceType: "Gutter Cleaning",
+        description:
+          "Hand gutter cleaning for homes in East Brainerd and southeast Chattanooga: every section cleared, downspouts flushed, debris hauled away. From $100.",
+        price: "100",
+      }),
+      faqPageSchema(FAQ_GUTTER_CLEANING_EAST_BRAINERD),
+    ],
+  };
+
   const faq = {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
@@ -1508,6 +1565,7 @@ export function getAllRoutes() {
     locationsIndex,
     ...locationPages,
     gutterCleaningChattanooga,
+    gutterCleaningEastBrainerd,
     about,
     faq,
     contact,

@@ -19,7 +19,9 @@ export function Hero() {
           Chattanooga, TN · Hamilton County
         </p>
         <h1 className="mt-3 font-display text-3xl font-bold leading-tight text-white md:text-4xl drop-shadow-[0_2px_8px_rgba(15,41,66,0.35)] animate-fade-in">
-          Best in Chattanooga Gutter Installation and Repair
+          Providing Professional Gutter Services
+          <br />
+          in Chattanooga and Surrounding Areas
         </h1>
         <p className="mt-4 text-lg font-semibold text-cream/90 animate-fade-in-up md:text-xl">
           Honest, Affordable, On Time.

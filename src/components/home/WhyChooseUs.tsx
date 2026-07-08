@@ -43,7 +43,7 @@ export function WhyChooseUs() {
           </div>
           <div className="space-y-5 text-base leading-relaxed text-navy/80">
             <p>
-              Hiring a gutter company in Chattanooga shouldn't feel like a gamble. We built Gutter-It around the four things homeowners told us they were missing from the last contractor: a real human answering the phone, honest pricing, work done by skilled people who know the local homes, and a crew that finishes what it started. Every job — whether it's a simple gutter cleaning in Hixson, a sagging downspout repair in East Ridge, or a full seamless gutter installation on Signal Mountain — gets the same standard.
+              Hiring a gutter company in Chattanooga shouldn't feel like a gamble. We built Gutter-It around the four things homeowners told us they were missing from the last contractor: a real human answering the phone, honest pricing, work done by skilled people who know the local homes, and a crew that finishes what it started. Every job — whether it's a simple gutter cleaning in Hixson, a gutter repair for leaking seams in East Ridge, or a full seamless gutter installation on Signal Mountain — gets the same standard.
             </p>
             <p>
               Tennessee weather is hard on gutters. Heavy summer thunderstorms drop an inch of rain in an hour. Oaks, maples, hemlocks, and pines load gutters with debris from March through December. Ice and freeze cycles work seams loose. Sun fades the finish on south-facing runs. We see all of it every week, and we build our work around how Chattanooga homes actually weather — not what looks good in a national franchise brochure.

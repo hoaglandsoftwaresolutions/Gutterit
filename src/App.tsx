@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FaqPage from "./pages/Faq";
 import GutterCleaningChattanooga from "./pages/GutterCleaningChattanooga";
+import GutterCleaningEastBrainerd from "./pages/GutterCleaningEastBrainerd";
 import ExtraService from "./pages/services/ExtraService";
 import LocationsIndex from "./pages/locations/LocationsIndex";
 import Location from "./pages/locations/Location";
@@ -71,6 +72,10 @@ export default function App() {
           <Route
             path="gutter-cleaning-chattanooga"
             element={<GutterCleaningChattanooga />}
+          />
+          <Route
+            path="gutter-cleaning-east-brainerd"
+            element={<GutterCleaningEastBrainerd />}
           />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
