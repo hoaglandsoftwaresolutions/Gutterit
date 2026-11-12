@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import FaqPage from "./pages/Faq";
 import GutterCleaningChattanooga from "./pages/GutterCleaningChattanooga";
 import GutterCleaningEastBrainerd from "./pages/GutterCleaningEastBrainerd";
+import ChristmasLightInstallation from "./pages/ChristmasLightInstallation";
 import ExtraService from "./pages/services/ExtraService";
 import LocationsIndex from "./pages/locations/LocationsIndex";
 import Location from "./pages/locations/Location";
@@ -76,6 +77,10 @@ export default function App() {
           <Route
             path="gutter-cleaning-east-brainerd"
             element={<GutterCleaningEastBrainerd />}
+          />
+          <Route
+            path="christmas-light-installation"
+            element={<ChristmasLightInstallation />}
           />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -224,6 +224,35 @@ export const FAQ_GUTTER_CLEANING_CHATTANOOGA = [
   },
 ];
 
+// FAQ for the /christmas-light-installation page. Keep in sync with
+// HOLIDAY_FAQ in src/data/holidayLighting.ts.
+export const FAQ_CHRISTMAS_LIGHTS = [
+  {
+    q: "Do I need to buy my own Christmas lights?",
+    a: "No. Our Full-Service LED Package includes commercial-grade C9 LED lights, custom-measured and cut to your home, plus installation, in-season maintenance, and January takedown. If you already own lights, we can install those instead at $3.75 per linear foot ($275 minimum).",
+  },
+  {
+    q: "How much does Christmas light installation cost?",
+    a: "Customer-supplied light installation is $3.75 per linear foot ($275 minimum). The Full-Service LED Package is $7.00 per linear foot ($750 minimum). Returning customers reusing their Gutter-It lights pay $5.00 per linear foot ($500 minimum). Final pricing is set after we measure your roofline.",
+  },
+  {
+    q: "Do you take the lights down after Christmas?",
+    a: "Yes. Takedown is included with the Full-Service LED Package and the Returning Customer Renewal. For customer-supplied lights, removal is optional at $1.50 per linear foot ($175 minimum).",
+  },
+  {
+    q: "Is the measurement and estimate free?",
+    a: "Yes. We'll measure your property and give you a free estimate based on your roofline footage, access, lighting needs, and project complexity.",
+  },
+  {
+    q: "Do you install holiday lighting for businesses?",
+    a: "Yes. Commercial projects start at $1,500, and we provide custom proposals for offices, retail locations, multi-building properties, and commercial facilities. Pricing depends on footage, building height, lift or equipment needs, and electrical layout.",
+  },
+  {
+    q: "What if my own lights don't work?",
+    a: "Customer-supplied lights need to be functional, compatible, and rated for outdoor use. If yours aren't, our Full-Service LED Package is the easiest option. We supply everything, and it's all built to fit your home.",
+  },
+];
+
 // FAQ for the /gutter-cleaning-east-brainerd local landing page. Keep in sync
 // with LOCAL_GUTTER_CLEANING_EAST_BRAINERD.faq in src/data/localPages.ts.
 export const FAQ_GUTTER_CLEANING_EAST_BRAINERD = [
@@ -1441,6 +1470,33 @@ export function getAllRoutes() {
     ],
   };
 
+  const christmasLights = {
+    path: "/christmas-light-installation",
+    title: "Christmas Light Installation in Chattanooga, TN | Gutter-It LLC",
+    description:
+      "Professional Christmas light installation in Chattanooga, TN. Commercial-grade C9 LED packages, maintenance, and January takedown. Free estimate.",
+    ogImage: `${SITE_ORIGIN}/images/hero/hero-main.jpg`,
+    priority: 0.8,
+    changefreq: "monthly",
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        {
+          name: "Christmas Light Installation",
+          path: "/christmas-light-installation",
+        },
+      ]),
+      localServiceSchema({
+        path: "/christmas-light-installation",
+        name: "Christmas Light Installation in Chattanooga, TN",
+        serviceType: "Christmas Light Installation",
+        description:
+          "Residential and commercial Christmas light installation in Chattanooga and surrounding areas: customer-supplied installs, full-service C9 LED packages, in-season maintenance, and post-holiday removal.",
+      }),
+      faqPageSchema(FAQ_CHRISTMAS_LIGHTS),
+    ],
+  };
+
   const faq = {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
@@ -1566,6 +1622,7 @@ export function getAllRoutes() {
     ...locationPages,
     gutterCleaningChattanooga,
     gutterCleaningEastBrainerd,
+    christmasLights,
     about,
     faq,
     contact,

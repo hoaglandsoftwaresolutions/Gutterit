@@ -74,8 +74,24 @@ export default {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        // Gentle holiday-bulb shimmer used by StringLights.
+        // Bulbs flare bright, then drop nearly dark with the glow cut off.
+        // --glow is set per bulb in StringLights.
+        twinkle: {
+          "0%, 100%": {
+            opacity: "1",
+            filter: "brightness(1.3)",
+            boxShadow: "0 0 16px 5px var(--glow)",
+          },
+          "50%": {
+            opacity: "0.15",
+            filter: "brightness(0.6)",
+            boxShadow: "0 0 0 0 transparent",
+          },
+        },
       },
       animation: {
+        twinkle: "twinkle 1.6s ease-in-out infinite",
         "fade-in": "fadeIn .6s ease-out both",
         "fade-in-down": "fadeInDown .5s cubic-bezier(.22,1,.36,1) both",
         "fade-in-up": "fadeInUp .7s cubic-bezier(.22,1,.36,1) both",

@@ -5,8 +5,16 @@ import { BUSINESS } from "../../data/business";
 import { SERVICES } from "../../data/services";
 import { ButtonLink } from "../ui/Button";
 import { cn } from "../../lib/utils";
+import {
+  HOLIDAY_LIGHTING_PATH,
+  HOLIDAY_SEASON_ACTIVE,
+} from "../../data/holidayLighting";
 
+// The holiday lighting link only shows in season (see HOLIDAY_SEASON_ACTIVE).
 const NAV_AFTER_SERVICES = [
+  ...(HOLIDAY_SEASON_ACTIVE
+    ? [{ to: HOLIDAY_LIGHTING_PATH, label: "Holiday Lighting" }]
+    : []),
   { to: "/service-areas", label: "Service Areas" },
   { to: "/about", label: "About" },
   { to: "/faq", label: "FAQ" },

@@ -93,6 +93,14 @@ export function Footer() {
                 Gutter Cleaning in East Brainerd
               </Link>
             </li>
+            <li>
+              <Link
+                to="/christmas-light-installation"
+                className="hover:text-white"
+              >
+                Christmas Light Installation
+              </Link>
+            </li>
           </ul>
 
           <h4 className="mt-8 text-xs font-semibold uppercase tracking-wider text-cream">

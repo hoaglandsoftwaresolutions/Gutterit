@@ -7,6 +7,7 @@ import {
   LOCAL_GUTTER_CLEANING_CHATTANOOGA,
   LOCAL_GUTTER_CLEANING_EAST_BRAINERD,
 } from "./localPages";
+import { HOLIDAY_FAQ, HOLIDAY_LIGHTING_PATH } from "./holidayLighting";
 import { EXTRA_SERVICES, serviceUrl, locationUrl } from "./extraServices";
 import { LOCATIONS, type LocationContent } from "./locations";
 
@@ -179,6 +180,28 @@ export function getStaticRoutes(): PageSeo[] {
     ],
   };
 
+  const christmasLights: PageSeo = {
+    path: HOLIDAY_LIGHTING_PATH,
+    title: "Christmas Light Installation in Chattanooga, TN | Gutter-It LLC",
+    description:
+      "Professional Christmas light installation in Chattanooga, TN. Commercial-grade C9 LED packages, maintenance, and January takedown. Free estimate.",
+    ogImage: `${SITE_ORIGIN}/images/hero/hero-main.jpg`,
+    jsonLd: [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Christmas Light Installation", path: HOLIDAY_LIGHTING_PATH },
+      ]),
+      localServiceSchema({
+        path: HOLIDAY_LIGHTING_PATH,
+        name: "Christmas Light Installation in Chattanooga, TN",
+        serviceType: "Christmas Light Installation",
+        description:
+          "Residential and commercial Christmas light installation in Chattanooga and surrounding areas: customer-supplied installs, full-service C9 LED packages, in-season maintenance, and post-holiday removal.",
+      }),
+      faqPageSchema(HOLIDAY_FAQ),
+    ],
+  };
+
   const faq: PageSeo = {
     path: "/faq",
     title: "FAQ | Gutter-It LLC, Chattanooga TN",
@@ -278,6 +301,7 @@ export function getStaticRoutes(): PageSeo[] {
     ...locationPages,
     gutterCleaningChattanooga,
     gutterCleaningEastBrainerd,
+    christmasLights,
     about,
     faq,
     contact,

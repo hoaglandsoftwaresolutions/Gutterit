@@ -8,12 +8,14 @@ import { WhyChooseUs } from "../components/home/WhyChooseUs";
 import { Testimonials } from "../components/home/Testimonials";
 import { Faq } from "../components/home/Faq";
 import { CtaSection } from "../components/ui/CtaSection";
+import { HolidayBanner } from "../components/home/HolidayBanner";
 
 export default function Home() {
   return (
     <>
       <PageSeoTags path="/" />
       <Hero />
+      <HolidayBanner />
       <TrustBar />
       <WhyChooseUs />
       <Testimonials />
