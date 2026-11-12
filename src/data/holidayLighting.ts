@@ -9,10 +9,29 @@ import type { FaqItem } from "./faq";
 
 export const HOLIDAY_LIGHTING_PATH = "/christmas-light-installation";
 
-// Flip to `false` after the holidays (January takedown) to hide the homepage
-// banner and the header nav link. The page itself stays live year-round so
-// it keeps its search ranking for next season.
-export const HOLIDAY_SEASON_ACTIVE = true;
+// The homepage banner and header nav link show automatically during the
+// holiday season, every year. The page itself stays live year-round so it
+// keeps its search ranking for next season.
+//
+// Season window (inclusive), as [month, day] with month 1–12:
+const SEASON_START: [number, number] = [11, 1]; // November 1
+const SEASON_END: [number, number] = [1, 15]; // January 15
+
+// Manual override: set to true/false to force the banner on or off
+// regardless of date. Leave as null for automatic.
+const SEASON_OVERRIDE: boolean | null = null;
+
+export function isHolidaySeason(date = new Date()): boolean {
+  if (SEASON_OVERRIDE !== null) return SEASON_OVERRIDE;
+  const md = (date.getMonth() + 1) * 100 + date.getDate();
+  const start = SEASON_START[0] * 100 + SEASON_START[1];
+  const end = SEASON_END[0] * 100 + SEASON_END[1];
+  // Window wraps past New Year, so it's "on or after start OR on or before end".
+  return start <= end ? md >= start && md <= end : md >= start || md <= end;
+}
+
+// Evaluated in the visitor's browser on each page load, using their date.
+export const HOLIDAY_SEASON_ACTIVE = isHolidaySeason();
 
 export type ResidentialPackage = {
   name: string;
